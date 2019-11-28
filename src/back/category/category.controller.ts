@@ -13,10 +13,8 @@ import {
 import { CategoryService } from './category.service';
 import { Category } from '../../database/entity/category.entity';
 import { Auth } from '../../shared/guards/auth.guard';
-import { Pagination } from 'nestjs-typeorm-paginate';
 import { BaseController } from '../../shared/base/base.controller';
 import { NewCategoryInput, UpdateCategoryInput } from './category.dto';
-import { ClassType } from 'type-graphql';
 import { BaseDto } from '../../shared/base/base.dto';
 
 @UseGuards(new Auth())

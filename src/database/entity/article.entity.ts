@@ -10,6 +10,9 @@ import {
 import GraphQLJSON from 'graphql-type-json';
 import { ObjectType, Field } from 'type-graphql';
 import { User } from './user.entity';
+import { Category } from './category.entity';
+import { Tags } from './tags.entity';
+import { Fields } from './fields.entity';
 
 @ObjectType({ implements: App, description: 'Article Type' })
 @Entity()
@@ -116,36 +119,40 @@ export class Article extends App {
   })
   public author: User;
 
-  // @Field(() => Category, { nullable: true, description: '分类' })
-  // @ManyToOne(() => Category, category => category.article, {
-  //   cascade: true,
-  //   onDelete: 'CASCADE',
-  //   onUpdate: 'CASCADE',
-  //   eager: true,
-  // })
-  // public category: Category;
+  @Field(() => Category, { nullable: true, description: '分类' })
+  @ManyToOne(
+    () => Category,
+    cate => cate.article,
+    {
+      cascade: true,
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
+      eager: true,
+    },
+  )
+  public category: Category;
 
-  // @Field(() => [Fields], { nullable: true, description: '自定义字段' })
-  // @ManyToMany(() => Fields, fields => fields.article, {
-  //   cascade: true,
-  //   onDelete: 'CASCADE',
-  //   onUpdate: 'CASCADE',
-  //   eager: true,
-  //   nullable: true,
-  // })
-  // @JoinTable()
-  // public fields: Fields[];
+  @Field(() => [Fields], { nullable: true, description: '自定义字段' })
+  @ManyToMany(() => Fields, {
+    cascade: true,
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+    eager: true,
+    nullable: true,
+  })
+  @JoinTable()
+  public fields: Fields[];
 
-  // @Field(() => [Tags], { nullable: true, description: '标签' })
-  // @ManyToMany(() => Tags, tags => tags.article, {
-  //   cascade: true,
-  //   onDelete: 'CASCADE',
-  //   onUpdate: 'CASCADE',
-  //   eager: true,
-  //   nullable: true,
-  // })
-  // @JoinTable()
-  // public tags: Tags[];
+  @Field(() => [Tags], { nullable: true, description: '标签' })
+  @ManyToMany(() => Tags, {
+    cascade: true,
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+    eager: true,
+    nullable: true,
+  })
+  @JoinTable()
+  public tags: Tags[];
 
   // @Field(() => [Comments], { nullable: true, description: '评论' })
   // @OneToMany(type => Comments, comments => comments.article, {

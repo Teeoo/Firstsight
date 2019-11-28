@@ -11,6 +11,7 @@ import { ArticleModule } from './back/article/article.module';
 import { TagsModule } from './back/tags/tags.module';
 import { LinksModule } from './back/links/links.module';
 import { HelperModule } from './back/helper/helper.module';
+import { FieldsModule } from './back/fields/fields.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { HelperModule } from './back/helper/helper.module';
     TagsModule,
     LinksModule,
     HelperModule,
+    FieldsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

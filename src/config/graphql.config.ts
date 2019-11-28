@@ -4,9 +4,9 @@ export default {
   // formatResponse: (res: any, req: any) => {
   //   return res;
   // },
-  // formatError: err => {
-  //   return err.message;
-  // },
+  formatError: err => {
+    return err.message;
+  },
   uploads: true,
   playground: Boolean(process.env.GRAPHQL_PLAYGROUND),
   debug: false,

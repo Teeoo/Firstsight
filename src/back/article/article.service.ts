@@ -1,4 +1,53 @@
-import { Injectable } from '@nestjs/common';
+import {
+  forwardRef,
+  Inject,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
+import { BaseService } from '../../shared/base/base.service';
+import { Article } from '../../database/entity/article.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { TreeRepository } from 'typeorm';
+import { CategoryService } from '../category/category.service';
+import { TagsService } from '../tags/tags.service';
+import { User } from '../../database/entity/user.entity';
+import { FieldsService } from '../fields/fields.service';
 
 @Injectable()
-export class ArticleService {}
+export class ArticleService extends BaseService<Article> {
+  constructor(
+    @InjectRepository(Article)
+    protected readonly repo: TreeRepository<Article>,
+    @Inject(forwardRef(() => CategoryService))
+    private readonly cateService: CategoryService,
+    @Inject(forwardRef(() => TagsService))
+    private readonly tagsService: TagsService,
+    @Inject(forwardRef(() => FieldsService))
+    private readonly fieldService: FieldsService,
+  ) {
+    super(repo);
+  }
+
+  public async createMany(data: any, user: User) {
+    Object.assign(data, { author: user });
+    if (data.type === 'article') {
+      data.category = await this.cateService.getOne(data.category);
+    }
+    data.tags = await this.tagsService.findOrCreate(data.tags);
+    const result = await this.repo.save(this.repo.create(data));
+    return result;
+  }
+
+  public async updateMany(id: string, data: any) {
+    const result = await this.repo.findOne({ id });
+    if (!result) {
+      throw new NotFoundException(`文章不存在`);
+    }
+    if (data.type === 'article') {
+      data.category = await this.cateService.getOne(data.category);
+    }
+    data.tags = await this.tagsService.findOrCreate(data.tags);
+    data.fields = await this.fieldService.findOrCreate(data.fields);
+    return await this.repo.save(Object.assign(result, data));
+  }
+}

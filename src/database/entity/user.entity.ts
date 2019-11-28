@@ -80,7 +80,7 @@ export class User extends App {
 
   @Expose({ name: 'password' })
   private getPassword() {
-    return '请刮开->█████████';
+    return '刮开有小惊喜哦😅->█████████';
   }
 
   @Expose({ name: 'salt' })

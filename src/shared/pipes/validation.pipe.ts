@@ -14,6 +14,7 @@ import { plainToClass } from 'class-transformer';
 @Injectable()
 export class ValidationPipe implements PipeTransform {
   public logger = new Logger(ValidationPipe.name);
+
   public async transform(value: any, metadata: ArgumentMetadata) {
     const { metatype } = metadata;
     if (value instanceof Object && Object.keys(value).length <= 0) {
@@ -23,7 +24,7 @@ export class ValidationPipe implements PipeTransform {
       return value;
     }
     const object = plainToClass(metatype, value);
-    const errors = await validate(object);
+    const errors = await validate(object, {});
     if (errors.length > 0) {
       const error = errors.shift();
       const constraints = error.constraints;

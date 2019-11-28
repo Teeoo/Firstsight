@@ -4,22 +4,16 @@ export function BasePaginate<TItem>(TItemClass: ClassType<TItem>): any {
   @ObjectType({ isAbstract: true })
   abstract class Paginate {
     @Field(type => Int, { defaultValue: 10 })
-    public itemCount: number;
+    public limit: number;
 
     @Field(type => Int, { nullable: true })
-    public totalItems: number;
+    public total: number;
 
     @Field(type => Int, { nullable: true })
-    public pageCount: number;
-
-    @Field(type => String, { nullable: true })
-    public next: string;
-
-    @Field(type => String, { nullable: true })
-    public previous: string;
+    public count: number;
 
     @Field(type => [TItemClass], { nullable: true })
-    public items: TItem[];
+    public data: TItem[];
   }
   return Paginate;
 }

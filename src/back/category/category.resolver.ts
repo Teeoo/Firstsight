@@ -15,6 +15,8 @@ export class CategoryPaginate extends BasePaginate(Category) {}
 @UseGuards(new Auth())
 @Resolver('Category')
 export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
+  public EVENT_NAME = `OnChange${Category.name}`;
+
   constructor(
     protected readonly service: CategoryService,
     @Inject('REDIS_SUB') private pubSub: PubSubEngine,
@@ -31,7 +33,11 @@ export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
   public async newCategory(
     @Args('data') data: NewCategoryInput,
   ): Promise<Category | Category[]> {
-    return await this.service.createOne(data);
+    const result = await this.service.createOne(data);
+    await this.pubSub.publish(this.EVENT_NAME, {
+      [this.EVENT_NAME]: await this.service.getMany({ limit: 10, page: 1 }),
+    });
+    return result;
   }
 
   @Mutation(() => Category)
@@ -39,6 +45,10 @@ export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
     @Args() { id }: BaseDto,
     @Args('data') data: UpdateCategoryInput,
   ): Promise<Category> {
-    return await this.service.updateOne(id, data);
+    const result = await this.service.updateOne(id, data);
+    await this.pubSub.publish(this.EVENT_NAME, {
+      [this.EVENT_NAME]: await this.service.getMany({ limit: 10, page: 1 }),
+    });
+    return result;
   }
 }

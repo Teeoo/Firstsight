@@ -21,8 +21,11 @@ export abstract class BaseController<T> {
   public async getMany(
     @Query('page') page: number = 0,
     @Query('limit') limit: number = 10,
+    @Query('query') query?: any,
+    @Query('sort') sort?: any,
   ) {
-    return this.service.getMany({ page, limit, route: '' });
+    // TODO: query 和 sort 待处理
+    return this.service.getMany({ page, limit }, { order: 'ASC' });
   }
 
   @Get(':id')

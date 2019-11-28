@@ -1,15 +1,15 @@
 import { Args, Mutation, Query, Subscription } from '@nestjs/graphql';
 import { BaseService } from './base.service';
 import { ClassType } from 'type-graphql';
-import { Pagination } from 'nestjs-typeorm-paginate';
-import { GetRecipesArgs } from './base.args';
 import { BaseDto } from './base.dto';
+import { GetRecipesArgs } from './base.args';
 
 export function BaseResolver<E extends ClassType, P extends ClassType>(
   EntityClass: E,
   Paginates: P,
 ): any {
   const EVENT_NAME = `OnChange${EntityClass.name}`;
+
   abstract class Resolvers {
     protected constructor(
       protected service: BaseService<E>,
@@ -20,10 +20,8 @@ export function BaseResolver<E extends ClassType, P extends ClassType>(
       name: `all${EntityClass.name}`,
       description: `Get multiple **${EntityClass.name}**`,
     })
-    public async getMany(
-      @Args() { limit, page, route }: GetRecipesArgs,
-    ): Promise<Pagination<E>> {
-      return await this.service.getMany({ limit, page, route });
+    public async getMany(@Args() { limit, page }: GetRecipesArgs) {
+      return await this.service.getMany({ limit, page });
     }
 
     @Query(() => EntityClass, {
@@ -41,6 +39,7 @@ export function BaseResolver<E extends ClassType, P extends ClassType>(
       await this.pubSub.publish(EVENT_NAME, { [EVENT_NAME]: result });
       return (await this.service.deleteOne(id)) ? true : false;
     }
+
     @Subscription(() => Paginates, {
       nullable: true,
       name: EVENT_NAME,

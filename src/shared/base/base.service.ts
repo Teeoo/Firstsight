@@ -1,11 +1,7 @@
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
-import { TreeRepository } from 'typeorm';
-import {
-  IPaginationOptions,
-  paginate,
-  Pagination,
-} from 'nestjs-typeorm-paginate';
+import { DeleteResult, TreeRepository, ObjectLiteral } from 'typeorm';
 import { ClassType } from 'class-transformer/ClassTransformer';
+import { Pagination } from './base.dto';
 
 @Injectable()
 export abstract class BaseService<T> {
@@ -34,15 +30,45 @@ export abstract class BaseService<T> {
   }
 
   /**
+   * 批量删除
+   * @param ids
+   */
+  public async deleteMany(ids: string): Promise<DeleteResult> {
+    return await this.repo.delete(ids.split(','));
+  }
+
+  /**
    * 获取分页数据
    * @param options
    */
-  public async getMany(options: IPaginationOptions): Promise<Pagination<T>> {
-    const result = await this.repo
-      .createQueryBuilder('o')
-      .orderBy('o.order', 'ASC')
-      .cache(60000);
-    return await paginate<T>(result, options);
+  public async getMany(
+    options: Pagination,
+    order?: any,
+    where?: Partial<T> | ObjectLiteral | string,
+  ): Promise<{
+    data: T[];
+    total: number;
+    limit: number;
+    page: number;
+    count: number;
+  }> {
+    const page =
+      options.page > 0 ? options.page - 1 : options.page < 0 ? 0 : options.page;
+
+    const [data, total] = await this.repo.findAndCount({
+      take: options.limit,
+      skip: page * options.limit,
+      cache: 60000,
+      order,
+    });
+
+    return {
+      data,
+      total,
+      limit: options.limit,
+      page,
+      count: Math.ceil(total / options.limit),
+    };
   }
 
   /**
@@ -115,5 +141,36 @@ export abstract class BaseService<T> {
     if (result) {
       return await this.repo.remove(result);
     }
+  }
+
+  public async findOrCreate<E>(data: any): Promise<T>;
+  public async findOrCreate(data: any): Promise<any> {
+    if (!data) {
+      return null;
+    }
+    const attr: Array<T | Promise<T[]>> = [];
+    for (const iterator of data) {
+      const record = await this.findOne({
+        where: [iterator],
+      });
+      if (!record) {
+        const rest: any = await this.repo.save(this.repo.create(iterator));
+        attr.push(rest);
+      } else {
+        attr.push(record);
+      }
+    }
+    return attr;
+  }
+
+  public async firstOrCreate<E>(data: any): Promise<T>;
+  public async firstOrCreate(data: any): Promise<any> {
+    const record = await this.findOne({
+      where: [data],
+    });
+    if (!record) {
+      return this.repo.save(this.repo.create(data));
+    }
+    return record;
   }
 }
