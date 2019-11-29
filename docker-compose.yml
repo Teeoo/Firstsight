@@ -3,7 +3,7 @@ services:
   postgres:
     container_name: postgres
     restart: always
-    image: postgres:11.5
+    image: postgres:11.6
     privileged: true
     ports:
       - '${DB_PORT}:5432'
