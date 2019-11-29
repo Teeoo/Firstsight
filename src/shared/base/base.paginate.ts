@@ -1,19 +1,25 @@
 import { ObjectType, Field, Int, ClassType } from 'type-graphql';
 
-export function BasePaginate<TItem>(TItemClass: ClassType<TItem>): any {
+export function BasePaginate<T>(TItemClass: ClassType<T>): any {
   @ObjectType({ isAbstract: true })
   abstract class Paginate {
-    @Field(type => Int, { defaultValue: 10 })
-    public limit: number;
-
-    @Field(type => Int, { nullable: true })
+    @Field(type => Int, { nullable: true, description: '总数据量' })
     public total: number;
 
-    @Field(type => Int, { nullable: true })
-    public count: number;
+    @Field(type => Int, { defaultValue: 10, description: '每页数据条数' })
+    public per_page: number;
+
+    @Field(type => Int, { defaultValue: 10, description: '当前页码' })
+    public current_page: number;
+
+    @Field(type => Int, {
+      defaultValue: 10,
+      description: '最后一页,也是总页数',
+    })
+    public last_page: number;
 
     @Field(type => [TItemClass], { nullable: true })
-    public data: TItem[];
+    public data: T[];
   }
   return Paginate;
 }

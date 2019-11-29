@@ -13,7 +13,19 @@
     "interface-name": [false],
     "arrow-parens": false,
     "object-literal-sort-keys": false,
-    "max-classes-per-file": false
+    "max-classes-per-file": false,
+    "linterOptions": {
+      "exclude": ["bin", "build", "config", "coverage", "node_modules"]
+    },
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-leading-underscore",
+        "allow-snake-case",
+        "allow-pascal-case"
+      ]
+    }
   },
   "rulesDirectory": []
 }

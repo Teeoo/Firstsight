@@ -9,14 +9,32 @@ import { UseGuards, Inject } from '@nestjs/common';
 import { Auth } from '../../shared/guards/auth.guard';
 import { BaseDto } from '../../shared/base/base.dto';
 
+/**
+ * @description
+ * @export
+ * @class CategoryPaginate
+ * @extends {BasePaginate(Category)}
+ */
 @ObjectType({ description: `CategoryPaginate` })
 export class CategoryPaginate extends BasePaginate(Category) {}
 
+/**
+ * @description
+ * @export
+ * @class CategoryResolver
+ * @extends {BaseResolver(Category, CategoryPaginate)}
+ */
 @UseGuards(new Auth())
 @Resolver('Category')
 export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
   public EVENT_NAME = `OnChange${Category.name}`;
 
+  /**
+   * Creates an instance of CategoryResolver.
+   * @param {CategoryService} service
+   * @param {PubSubEngine} pubSub
+   * @memberof CategoryResolver
+   */
   constructor(
     protected readonly service: CategoryService,
     @Inject('REDIS_SUB') private pubSub: PubSubEngine,
@@ -24,11 +42,22 @@ export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
     super(service, pubSub);
   }
 
+  /**
+   * @description
+   * @returns {Promise<Category[]>}
+   * @memberof CategoryResolver
+   */
   @Query(() => [Category])
   public async getCategoryTree(): Promise<Category[]> {
     return await this.service.getTrees();
   }
 
+  /**
+   * @description
+   * @param {NewCategoryInput} data
+   * @returns {(Promise<Category | Category[]>)}
+   * @memberof CategoryResolver
+   */
   @Mutation(() => Category)
   public async newCategory(
     @Args('data') data: NewCategoryInput,
@@ -40,6 +69,13 @@ export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
     return result;
   }
 
+  /**
+   * @description
+   * @param {BaseDto} { id }
+   * @param {UpdateCategoryInput} data
+   * @returns {Promise<Category>}
+   * @memberof CategoryResolver
+   */
   @Mutation(() => Category)
   public async updateCategory(
     @Args() { id }: BaseDto,

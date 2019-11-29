@@ -16,14 +16,14 @@ export default {
   subscribers: [
     `${path.resolve(__dirname, '..')}${String(process.env.DB_SUBSCRIBERS)}`,
   ],
-  // cache: {
-  //   type: 'ioredis',
-  //   options: {
-  //     host: process.env.CACHE_HOST,
-  //     port: process.env.CACHE_PORT,
-  //     options: {
-  //       scaleReads: 'all',
-  //     },
-  //   },
-  // },
+  cache: {
+    type: 'ioredis',
+    options: {
+      host: process.env.CACHE_HOST,
+      port: process.env.CACHE_PORT,
+      options: {
+        scaleReads: 'all',
+      },
+    },
+  },
 };

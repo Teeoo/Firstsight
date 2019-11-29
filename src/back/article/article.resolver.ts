@@ -12,12 +12,30 @@ import { Inject, UseGuards } from '@nestjs/common';
 import { ArticleService } from './article.service';
 import { Auth } from '../../shared/guards/auth.guard';
 
+/**
+ * @description Paginate
+ * @export
+ * @class ArticlePaginate
+ * @extends {BasePaginate(Article)}
+ */
 @ObjectType({ description: `` })
 export class ArticlePaginate extends BasePaginate(Article) {}
 
+/**
+ * @description
+ * @export
+ * @class ArticleResolver
+ * @extends {BaseResolver(Article, ArticlePaginate)}
+ */
 @UseGuards(new Auth())
 @Resolver('Article')
 export class ArticleResolver extends BaseResolver(Article, ArticlePaginate) {
+  /**
+   * Creates an instance of ArticleResolver.
+   * @param {ArticleService} service
+   * @param {PubSubEngine} pubSub
+   * @memberof ArticleResolver
+   */
   constructor(
     protected readonly service: ArticleService,
     @Inject('REDIS_SUB') private pubSub: PubSubEngine,
@@ -25,6 +43,13 @@ export class ArticleResolver extends BaseResolver(Article, ArticlePaginate) {
     super(service, pubSub);
   }
 
+  /**
+   * @description newArticle
+   * @param {NewArticleInput} data
+   * @param {User} user
+   * @returns {(Promise<Article | Article[]>)}
+   * @memberof ArticleResolver
+   */
   @Mutation(() => Article)
   public async newArticle(
     @Args('data') data: NewArticleInput,
@@ -33,6 +58,13 @@ export class ArticleResolver extends BaseResolver(Article, ArticlePaginate) {
     return await this.service.createMany(data, user);
   }
 
+  /**
+   * @description updateArticle
+   * @param {BaseDto} { id }
+   * @param {UpdateArticleInput} data
+   * @returns {Promise<Category>}
+   * @memberof ArticleResolver
+   */
   @Mutation(() => Article)
   public async updateArticle(
     @Args() { id }: BaseDto,

@@ -13,8 +13,22 @@ import { TagsService } from '../tags/tags.service';
 import { User } from '../../database/entity/user.entity';
 import { FieldsService } from '../fields/fields.service';
 
+/**
+ * @description
+ * @export
+ * @class ArticleService
+ * @extends {BaseService<Article>}
+ */
 @Injectable()
 export class ArticleService extends BaseService<Article> {
+  /**
+   * Creates an instance of ArticleService.
+   * @param {TreeRepository<Article>} repo
+   * @param {CategoryService} cateService
+   * @param {TagsService} tagsService
+   * @param {FieldsService} fieldService
+   * @memberof ArticleService
+   */
   constructor(
     @InjectRepository(Article)
     protected readonly repo: TreeRepository<Article>,
@@ -28,6 +42,13 @@ export class ArticleService extends BaseService<Article> {
     super(repo);
   }
 
+  /**
+   * @description
+   * @param {*} data
+   * @param {User} user
+   * @returns
+   * @memberof ArticleService
+   */
   public async createMany(data: any, user: User) {
     Object.assign(data, { author: user });
     if (data.type === 'article') {
@@ -38,6 +59,13 @@ export class ArticleService extends BaseService<Article> {
     return result;
   }
 
+  /**
+   * @description
+   * @param {string} id
+   * @param {*} data
+   * @returns
+   * @memberof ArticleService
+   */
   public async updateMany(id: string, data: any) {
     const result = await this.repo.findOne({ id });
     if (!result) {

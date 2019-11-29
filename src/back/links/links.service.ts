@@ -6,6 +6,11 @@ import { TreeRepository } from 'typeorm';
 
 @Injectable()
 export class LinksService extends BaseService<Links> {
+  /**
+   * Creates an instance of LinksService.
+   * @param {TreeRepository<Links>} repo
+   * @memberof LinksService
+   */
   constructor(
     @InjectRepository(Links) protected readonly repo: TreeRepository<Links>,
   ) {

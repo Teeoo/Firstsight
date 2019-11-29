@@ -2882,3 +2882,735 @@ $3
 DEL
 $311
 SELECT "o"."id" AS "o_id", "o"."order" AS "o_order", "o"."desc" AS "o_desc", "o"."createdAt" AS "o_createdAt", "o"."updatedAt" AS "o_updatedAt", "o"."label" AS "o_label", "o"."slug" AS "o_slug", "o"."color" AS "o_color", "o"."hot" AS "o_hot" FROM "l_tags" "o" ORDER BY "o"."order" ASC LIMIT 10 -- PARAMETERS: []
+*2
+$6
+SELECT
+$1
+0
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1574991236920,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1574991323320
+*3
+$3
+set
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$5547
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 -- PARAMETERS: []","time":1574991236927,"duration":60000,"result":"[{\"Category_id\":\"92bae8c6-8fa5-4951-bb59-4e2038e62ddc\",\"Category_order\":1,\"Category_desc\":\"exercitation ullam\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-27T16:00:00.000Z\",\"Category_label\":\"laboris nisi ut aliquip ex ea comm\",\"Category_slug\":\"$1.22\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"mollit anim id est laborum.Lorem ipsu\",\"Category_parentId\":null},{\"Category_id\":\"c1025ee0-ef7c-4e73-a572-2dfae7691813\",\"Category_order\":2,\"Category_desc\":\"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-28T16:00:00.000Z\",\"Category_label\":\"ipsum dolor sit amet, \",\"Category_slug\":\"$58468.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in volupta\",\"Category_parentId\":null},{\"Category_id\":\"7eecbe10-7db6-48cc-9ae7-7e2da45efb1b\",\"Category_order\":3,\"Category_desc\":\"tempor incidi\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-29T16:00:00.000Z\",\"Category_label\":\"in reprehenderit in voluptate velit esse cill\",\"Category_slug\":\"$39.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"veniam, quis nostrud exercitation ullamco la\",\"Category_parentId\":null},{\"Category_id\":\"8c2ab00d-c22c-43e1-b7ec-038b24480836\",\"Category_order\":4,\"Category_desc\":\"consectetur adip\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-30T16:00:00.000Z\",\"Category_label\":\"sint occaecat cu\",\"Category_slug\":\"$12.11\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est \",\"Category_parentId\":null},{\"Category_id\":\"5fdaa078-5fe6-45cd-afe5-178210333dc9\",\"Category_order\":5,\"Category_desc\":\"el\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-01T16:00:00.000Z\",\"Category_label\":\"cupidatat non proident, sunt in culpa qui officia deseru\",\"Category_slug\":\"$94.17\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolo\",\"Category_parentId\":null},{\"Category_id\":\"673dabcb-992e-4c2f-8f74-61d101291102\",\"Category_order\":6,\"Category_desc\":\"in voluptate velit esse cillum dolore eu fugiat nul\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-02T16:00:00.000Z\",\"Category_label\":\"amet, consectetur adipiscing elit, sed do eius\",\"Category_slug\":\"$8.73\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"sint occaecat cupidatat non proident, sunt in \",\"Category_parentId\":null},{\"Category_id\":\"f29b76cf-9649-46c2-8c3c-a68a1d1de832\",\"Category_order\":7,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-03T16:00:00.000Z\",\"Category_label\":\"dolore magna aliqua. Ut enim ad minim veniam, quis nost\",\"Category_slug\":\"$2.36\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci\",\"Category_parentId\":null},{\"Category_id\":\"cc77d645-4c51-4515-b245-cbead2fae18d\",\"Category_order\":8,\"Category_desc\":\"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-04T16:00:00.000Z\",\"Category_label\":\"veniam, quis nostrud exercitation ullamco laboris nisi\",\"Category_slug\":\"$717.76\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"consectetur adipiscing\",\"Category_parentId\":null},{\"Category_id\":\"8598086f-3664-4a0b-b6e4-f6577d9afefd\",\"Category_order\":9,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris ni\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-05T16:00:00.000Z\",\"Category_label\":\"nulla pariatur. Excepteur sint occaecat cupidatat \",\"Category_slug\":\"$6.79\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"adi\",\"Category_parentId\":null},{\"Category_id\":\"00af81d7-d522-4f02-b5c0-315a28e4108b\",\"Category_order\":10,\"Category_desc\":\"ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute \",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-06T16:00:00.000Z\",\"Category_label\":\"sit amet, consectetur adipiscing elit, s\",\"Category_slug\":\"$77.44\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolore magna aliqua. Ut enim ad mi\",\"Category_parentId\":null}]"}
+*3
+$9
+PEXPIREAT
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$13
+1574991296928
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1574991236931,"duration":60000,"result":"[{\"cnt\":\"500\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1574991296932
+*2
+$3
+DEL
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1574991933649,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1574992020050
+*3
+$3
+set
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$5547
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 -- PARAMETERS: []","time":1574991933661,"duration":60000,"result":"[{\"Category_id\":\"92bae8c6-8fa5-4951-bb59-4e2038e62ddc\",\"Category_order\":1,\"Category_desc\":\"exercitation ullam\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-27T16:00:00.000Z\",\"Category_label\":\"laboris nisi ut aliquip ex ea comm\",\"Category_slug\":\"$1.22\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"mollit anim id est laborum.Lorem ipsu\",\"Category_parentId\":null},{\"Category_id\":\"c1025ee0-ef7c-4e73-a572-2dfae7691813\",\"Category_order\":2,\"Category_desc\":\"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-28T16:00:00.000Z\",\"Category_label\":\"ipsum dolor sit amet, \",\"Category_slug\":\"$58468.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in volupta\",\"Category_parentId\":null},{\"Category_id\":\"7eecbe10-7db6-48cc-9ae7-7e2da45efb1b\",\"Category_order\":3,\"Category_desc\":\"tempor incidi\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-29T16:00:00.000Z\",\"Category_label\":\"in reprehenderit in voluptate velit esse cill\",\"Category_slug\":\"$39.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"veniam, quis nostrud exercitation ullamco la\",\"Category_parentId\":null},{\"Category_id\":\"8c2ab00d-c22c-43e1-b7ec-038b24480836\",\"Category_order\":4,\"Category_desc\":\"consectetur adip\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-30T16:00:00.000Z\",\"Category_label\":\"sint occaecat cu\",\"Category_slug\":\"$12.11\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est \",\"Category_parentId\":null},{\"Category_id\":\"5fdaa078-5fe6-45cd-afe5-178210333dc9\",\"Category_order\":5,\"Category_desc\":\"el\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-01T16:00:00.000Z\",\"Category_label\":\"cupidatat non proident, sunt in culpa qui officia deseru\",\"Category_slug\":\"$94.17\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolo\",\"Category_parentId\":null},{\"Category_id\":\"673dabcb-992e-4c2f-8f74-61d101291102\",\"Category_order\":6,\"Category_desc\":\"in voluptate velit esse cillum dolore eu fugiat nul\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-02T16:00:00.000Z\",\"Category_label\":\"amet, consectetur adipiscing elit, sed do eius\",\"Category_slug\":\"$8.73\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"sint occaecat cupidatat non proident, sunt in \",\"Category_parentId\":null},{\"Category_id\":\"f29b76cf-9649-46c2-8c3c-a68a1d1de832\",\"Category_order\":7,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-03T16:00:00.000Z\",\"Category_label\":\"dolore magna aliqua. Ut enim ad minim veniam, quis nost\",\"Category_slug\":\"$2.36\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci\",\"Category_parentId\":null},{\"Category_id\":\"cc77d645-4c51-4515-b245-cbead2fae18d\",\"Category_order\":8,\"Category_desc\":\"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-04T16:00:00.000Z\",\"Category_label\":\"veniam, quis nostrud exercitation ullamco laboris nisi\",\"Category_slug\":\"$717.76\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"consectetur adipiscing\",\"Category_parentId\":null},{\"Category_id\":\"8598086f-3664-4a0b-b6e4-f6577d9afefd\",\"Category_order\":9,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris ni\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-05T16:00:00.000Z\",\"Category_label\":\"nulla pariatur. Excepteur sint occaecat cupidatat \",\"Category_slug\":\"$6.79\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"adi\",\"Category_parentId\":null},{\"Category_id\":\"00af81d7-d522-4f02-b5c0-315a28e4108b\",\"Category_order\":10,\"Category_desc\":\"ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute \",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-06T16:00:00.000Z\",\"Category_label\":\"sit amet, consectetur adipiscing elit, s\",\"Category_slug\":\"$77.44\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolore magna aliqua. Ut enim ad mi\",\"Category_parentId\":null}]"}
+*3
+$9
+PEXPIREAT
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$13
+1574991993661
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1574991933663,"duration":60000,"result":"[{\"cnt\":\"500\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1574991993663
+*2
+$3
+DEL
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1574993760856,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1574993847256
+*3
+$3
+set
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$5547
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 -- PARAMETERS: []","time":1574993760868,"duration":60000,"result":"[{\"Category_id\":\"92bae8c6-8fa5-4951-bb59-4e2038e62ddc\",\"Category_order\":1,\"Category_desc\":\"exercitation ullam\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-27T16:00:00.000Z\",\"Category_label\":\"laboris nisi ut aliquip ex ea comm\",\"Category_slug\":\"$1.22\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"mollit anim id est laborum.Lorem ipsu\",\"Category_parentId\":null},{\"Category_id\":\"c1025ee0-ef7c-4e73-a572-2dfae7691813\",\"Category_order\":2,\"Category_desc\":\"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-28T16:00:00.000Z\",\"Category_label\":\"ipsum dolor sit amet, \",\"Category_slug\":\"$58468.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in volupta\",\"Category_parentId\":null},{\"Category_id\":\"7eecbe10-7db6-48cc-9ae7-7e2da45efb1b\",\"Category_order\":3,\"Category_desc\":\"tempor incidi\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-29T16:00:00.000Z\",\"Category_label\":\"in reprehenderit in voluptate velit esse cill\",\"Category_slug\":\"$39.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"veniam, quis nostrud exercitation ullamco la\",\"Category_parentId\":null},{\"Category_id\":\"8c2ab00d-c22c-43e1-b7ec-038b24480836\",\"Category_order\":4,\"Category_desc\":\"consectetur adip\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-30T16:00:00.000Z\",\"Category_label\":\"sint occaecat cu\",\"Category_slug\":\"$12.11\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est \",\"Category_parentId\":null},{\"Category_id\":\"5fdaa078-5fe6-45cd-afe5-178210333dc9\",\"Category_order\":5,\"Category_desc\":\"el\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-01T16:00:00.000Z\",\"Category_label\":\"cupidatat non proident, sunt in culpa qui officia deseru\",\"Category_slug\":\"$94.17\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolo\",\"Category_parentId\":null},{\"Category_id\":\"673dabcb-992e-4c2f-8f74-61d101291102\",\"Category_order\":6,\"Category_desc\":\"in voluptate velit esse cillum dolore eu fugiat nul\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-02T16:00:00.000Z\",\"Category_label\":\"amet, consectetur adipiscing elit, sed do eius\",\"Category_slug\":\"$8.73\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"sint occaecat cupidatat non proident, sunt in \",\"Category_parentId\":null},{\"Category_id\":\"f29b76cf-9649-46c2-8c3c-a68a1d1de832\",\"Category_order\":7,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-03T16:00:00.000Z\",\"Category_label\":\"dolore magna aliqua. Ut enim ad minim veniam, quis nost\",\"Category_slug\":\"$2.36\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci\",\"Category_parentId\":null},{\"Category_id\":\"cc77d645-4c51-4515-b245-cbead2fae18d\",\"Category_order\":8,\"Category_desc\":\"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-04T16:00:00.000Z\",\"Category_label\":\"veniam, quis nostrud exercitation ullamco laboris nisi\",\"Category_slug\":\"$717.76\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"consectetur adipiscing\",\"Category_parentId\":null},{\"Category_id\":\"8598086f-3664-4a0b-b6e4-f6577d9afefd\",\"Category_order\":9,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris ni\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-05T16:00:00.000Z\",\"Category_label\":\"nulla pariatur. Excepteur sint occaecat cupidatat \",\"Category_slug\":\"$6.79\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"adi\",\"Category_parentId\":null},{\"Category_id\":\"00af81d7-d522-4f02-b5c0-315a28e4108b\",\"Category_order\":10,\"Category_desc\":\"ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute \",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-06T16:00:00.000Z\",\"Category_label\":\"sit amet, consectetur adipiscing elit, s\",\"Category_slug\":\"$77.44\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolore magna aliqua. Ut enim ad mi\",\"Category_parentId\":null}]"}
+*3
+$9
+PEXPIREAT
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$13
+1574993820869
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1574993760873,"duration":60000,"result":"[{\"cnt\":\"500\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1574993820873
+*2
+$3
+DEL
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*3
+$3
+set
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$5547
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 -- PARAMETERS: []","time":1574993837688,"duration":60000,"result":"[{\"Category_id\":\"92bae8c6-8fa5-4951-bb59-4e2038e62ddc\",\"Category_order\":1,\"Category_desc\":\"exercitation ullam\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-27T16:00:00.000Z\",\"Category_label\":\"laboris nisi ut aliquip ex ea comm\",\"Category_slug\":\"$1.22\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"mollit anim id est laborum.Lorem ipsu\",\"Category_parentId\":null},{\"Category_id\":\"c1025ee0-ef7c-4e73-a572-2dfae7691813\",\"Category_order\":2,\"Category_desc\":\"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-28T16:00:00.000Z\",\"Category_label\":\"ipsum dolor sit amet, \",\"Category_slug\":\"$58468.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in volupta\",\"Category_parentId\":null},{\"Category_id\":\"7eecbe10-7db6-48cc-9ae7-7e2da45efb1b\",\"Category_order\":3,\"Category_desc\":\"tempor incidi\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-29T16:00:00.000Z\",\"Category_label\":\"in reprehenderit in voluptate velit esse cill\",\"Category_slug\":\"$39.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"veniam, quis nostrud exercitation ullamco la\",\"Category_parentId\":null},{\"Category_id\":\"8c2ab00d-c22c-43e1-b7ec-038b24480836\",\"Category_order\":4,\"Category_desc\":\"consectetur adip\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-30T16:00:00.000Z\",\"Category_label\":\"sint occaecat cu\",\"Category_slug\":\"$12.11\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est \",\"Category_parentId\":null},{\"Category_id\":\"5fdaa078-5fe6-45cd-afe5-178210333dc9\",\"Category_order\":5,\"Category_desc\":\"el\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-01T16:00:00.000Z\",\"Category_label\":\"cupidatat non proident, sunt in culpa qui officia deseru\",\"Category_slug\":\"$94.17\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolo\",\"Category_parentId\":null},{\"Category_id\":\"673dabcb-992e-4c2f-8f74-61d101291102\",\"Category_order\":6,\"Category_desc\":\"in voluptate velit esse cillum dolore eu fugiat nul\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-02T16:00:00.000Z\",\"Category_label\":\"amet, consectetur adipiscing elit, sed do eius\",\"Category_slug\":\"$8.73\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"sint occaecat cupidatat non proident, sunt in \",\"Category_parentId\":null},{\"Category_id\":\"f29b76cf-9649-46c2-8c3c-a68a1d1de832\",\"Category_order\":7,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-03T16:00:00.000Z\",\"Category_label\":\"dolore magna aliqua. Ut enim ad minim veniam, quis nost\",\"Category_slug\":\"$2.36\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci\",\"Category_parentId\":null},{\"Category_id\":\"cc77d645-4c51-4515-b245-cbead2fae18d\",\"Category_order\":8,\"Category_desc\":\"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-04T16:00:00.000Z\",\"Category_label\":\"veniam, quis nostrud exercitation ullamco laboris nisi\",\"Category_slug\":\"$717.76\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"consectetur adipiscing\",\"Category_parentId\":null},{\"Category_id\":\"8598086f-3664-4a0b-b6e4-f6577d9afefd\",\"Category_order\":9,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris ni\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-05T16:00:00.000Z\",\"Category_label\":\"nulla pariatur. Excepteur sint occaecat cupidatat \",\"Category_slug\":\"$6.79\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"adi\",\"Category_parentId\":null},{\"Category_id\":\"00af81d7-d522-4f02-b5c0-315a28e4108b\",\"Category_order\":10,\"Category_desc\":\"ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute \",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-06T16:00:00.000Z\",\"Category_label\":\"sit amet, consectetur adipiscing elit, s\",\"Category_slug\":\"$77.44\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolore magna aliqua. Ut enim ad mi\",\"Category_parentId\":null}]"}
+*3
+$9
+PEXPIREAT
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$13
+1574993897689
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1574993837692,"duration":60000,"result":"[{\"cnt\":\"499\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1574993897693
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*2
+$3
+DEL
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1574993906737,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1574993993137
+*3
+$3
+set
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$5547
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 -- PARAMETERS: []","time":1574993906746,"duration":60000,"result":"[{\"Category_id\":\"92bae8c6-8fa5-4951-bb59-4e2038e62ddc\",\"Category_order\":1,\"Category_desc\":\"exercitation ullam\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-27T16:00:00.000Z\",\"Category_label\":\"laboris nisi ut aliquip ex ea comm\",\"Category_slug\":\"$1.22\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"mollit anim id est laborum.Lorem ipsu\",\"Category_parentId\":null},{\"Category_id\":\"c1025ee0-ef7c-4e73-a572-2dfae7691813\",\"Category_order\":2,\"Category_desc\":\"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-28T16:00:00.000Z\",\"Category_label\":\"ipsum dolor sit amet, \",\"Category_slug\":\"$58468.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in volupta\",\"Category_parentId\":null},{\"Category_id\":\"7eecbe10-7db6-48cc-9ae7-7e2da45efb1b\",\"Category_order\":3,\"Category_desc\":\"tempor incidi\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-29T16:00:00.000Z\",\"Category_label\":\"in reprehenderit in voluptate velit esse cill\",\"Category_slug\":\"$39.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"veniam, quis nostrud exercitation ullamco la\",\"Category_parentId\":null},{\"Category_id\":\"8c2ab00d-c22c-43e1-b7ec-038b24480836\",\"Category_order\":4,\"Category_desc\":\"consectetur adip\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-30T16:00:00.000Z\",\"Category_label\":\"sint occaecat cu\",\"Category_slug\":\"$12.11\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est \",\"Category_parentId\":null},{\"Category_id\":\"5fdaa078-5fe6-45cd-afe5-178210333dc9\",\"Category_order\":5,\"Category_desc\":\"el\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-01T16:00:00.000Z\",\"Category_label\":\"cupidatat non proident, sunt in culpa qui officia deseru\",\"Category_slug\":\"$94.17\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolo\",\"Category_parentId\":null},{\"Category_id\":\"673dabcb-992e-4c2f-8f74-61d101291102\",\"Category_order\":6,\"Category_desc\":\"in voluptate velit esse cillum dolore eu fugiat nul\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-02T16:00:00.000Z\",\"Category_label\":\"amet, consectetur adipiscing elit, sed do eius\",\"Category_slug\":\"$8.73\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"sint occaecat cupidatat non proident, sunt in \",\"Category_parentId\":null},{\"Category_id\":\"f29b76cf-9649-46c2-8c3c-a68a1d1de832\",\"Category_order\":7,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-03T16:00:00.000Z\",\"Category_label\":\"dolore magna aliqua. Ut enim ad minim veniam, quis nost\",\"Category_slug\":\"$2.36\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci\",\"Category_parentId\":null},{\"Category_id\":\"cc77d645-4c51-4515-b245-cbead2fae18d\",\"Category_order\":8,\"Category_desc\":\"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-04T16:00:00.000Z\",\"Category_label\":\"veniam, quis nostrud exercitation ullamco laboris nisi\",\"Category_slug\":\"$717.76\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"consectetur adipiscing\",\"Category_parentId\":null},{\"Category_id\":\"8598086f-3664-4a0b-b6e4-f6577d9afefd\",\"Category_order\":9,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris ni\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-05T16:00:00.000Z\",\"Category_label\":\"nulla pariatur. Excepteur sint occaecat cupidatat \",\"Category_slug\":\"$6.79\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"adi\",\"Category_parentId\":null},{\"Category_id\":\"00af81d7-d522-4f02-b5c0-315a28e4108b\",\"Category_order\":10,\"Category_desc\":\"ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute \",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-06T16:00:00.000Z\",\"Category_label\":\"sit amet, consectetur adipiscing elit, s\",\"Category_slug\":\"$77.44\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolore magna aliqua. Ut enim ad mi\",\"Category_parentId\":null}]"}
+*3
+$9
+PEXPIREAT
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$13
+1574993966746
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1574993906751,"duration":60000,"result":"[{\"cnt\":\"499\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1574993966752
+*2
+$3
+DEL
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1574998267228,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1574998353629
+*3
+$3
+set
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$5547
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 -- PARAMETERS: []","time":1574998267244,"duration":60000,"result":"[{\"Category_id\":\"92bae8c6-8fa5-4951-bb59-4e2038e62ddc\",\"Category_order\":1,\"Category_desc\":\"exercitation ullam\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-27T16:00:00.000Z\",\"Category_label\":\"laboris nisi ut aliquip ex ea comm\",\"Category_slug\":\"$1.22\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"mollit anim id est laborum.Lorem ipsu\",\"Category_parentId\":null},{\"Category_id\":\"c1025ee0-ef7c-4e73-a572-2dfae7691813\",\"Category_order\":2,\"Category_desc\":\"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-28T16:00:00.000Z\",\"Category_label\":\"ipsum dolor sit amet, \",\"Category_slug\":\"$58468.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in volupta\",\"Category_parentId\":null},{\"Category_id\":\"7eecbe10-7db6-48cc-9ae7-7e2da45efb1b\",\"Category_order\":3,\"Category_desc\":\"tempor incidi\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-29T16:00:00.000Z\",\"Category_label\":\"in reprehenderit in voluptate velit esse cill\",\"Category_slug\":\"$39.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"veniam, quis nostrud exercitation ullamco la\",\"Category_parentId\":null},{\"Category_id\":\"8c2ab00d-c22c-43e1-b7ec-038b24480836\",\"Category_order\":4,\"Category_desc\":\"consectetur adip\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-30T16:00:00.000Z\",\"Category_label\":\"sint occaecat cu\",\"Category_slug\":\"$12.11\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est \",\"Category_parentId\":null},{\"Category_id\":\"5fdaa078-5fe6-45cd-afe5-178210333dc9\",\"Category_order\":5,\"Category_desc\":\"el\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-01T16:00:00.000Z\",\"Category_label\":\"cupidatat non proident, sunt in culpa qui officia deseru\",\"Category_slug\":\"$94.17\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolo\",\"Category_parentId\":null},{\"Category_id\":\"673dabcb-992e-4c2f-8f74-61d101291102\",\"Category_order\":6,\"Category_desc\":\"in voluptate velit esse cillum dolore eu fugiat nul\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-02T16:00:00.000Z\",\"Category_label\":\"amet, consectetur adipiscing elit, sed do eius\",\"Category_slug\":\"$8.73\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"sint occaecat cupidatat non proident, sunt in \",\"Category_parentId\":null},{\"Category_id\":\"f29b76cf-9649-46c2-8c3c-a68a1d1de832\",\"Category_order\":7,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-03T16:00:00.000Z\",\"Category_label\":\"dolore magna aliqua. Ut enim ad minim veniam, quis nost\",\"Category_slug\":\"$2.36\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci\",\"Category_parentId\":null},{\"Category_id\":\"cc77d645-4c51-4515-b245-cbead2fae18d\",\"Category_order\":8,\"Category_desc\":\"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-04T16:00:00.000Z\",\"Category_label\":\"veniam, quis nostrud exercitation ullamco laboris nisi\",\"Category_slug\":\"$717.76\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"consectetur adipiscing\",\"Category_parentId\":null},{\"Category_id\":\"8598086f-3664-4a0b-b6e4-f6577d9afefd\",\"Category_order\":9,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris ni\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-05T16:00:00.000Z\",\"Category_label\":\"nulla pariatur. Excepteur sint occaecat cupidatat \",\"Category_slug\":\"$6.79\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"adi\",\"Category_parentId\":null},{\"Category_id\":\"00af81d7-d522-4f02-b5c0-315a28e4108b\",\"Category_order\":10,\"Category_desc\":\"ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute \",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-06T16:00:00.000Z\",\"Category_label\":\"sit amet, consectetur adipiscing elit, s\",\"Category_slug\":\"$77.44\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolore magna aliqua. Ut enim ad mi\",\"Category_parentId\":null}]"}
+*3
+$9
+PEXPIREAT
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$13
+1574998327245
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1574998267249,"duration":60000,"result":"[{\"cnt\":\"499\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1574998327249
+*2
+$3
+DEL
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+*2
+$6
+SELECT
+$1
+0
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1575011637376,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1575011723777
+*3
+$3
+set
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$5547
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 -- PARAMETERS: []","time":1575011637400,"duration":60000,"result":"[{\"Category_id\":\"92bae8c6-8fa5-4951-bb59-4e2038e62ddc\",\"Category_order\":1,\"Category_desc\":\"exercitation ullam\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-27T16:00:00.000Z\",\"Category_label\":\"laboris nisi ut aliquip ex ea comm\",\"Category_slug\":\"$1.22\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"mollit anim id est laborum.Lorem ipsu\",\"Category_parentId\":null},{\"Category_id\":\"c1025ee0-ef7c-4e73-a572-2dfae7691813\",\"Category_order\":2,\"Category_desc\":\"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-28T16:00:00.000Z\",\"Category_label\":\"ipsum dolor sit amet, \",\"Category_slug\":\"$58468.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in volupta\",\"Category_parentId\":null},{\"Category_id\":\"7eecbe10-7db6-48cc-9ae7-7e2da45efb1b\",\"Category_order\":3,\"Category_desc\":\"tempor incidi\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-29T16:00:00.000Z\",\"Category_label\":\"in reprehenderit in voluptate velit esse cill\",\"Category_slug\":\"$39.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"veniam, quis nostrud exercitation ullamco la\",\"Category_parentId\":null},{\"Category_id\":\"8c2ab00d-c22c-43e1-b7ec-038b24480836\",\"Category_order\":4,\"Category_desc\":\"consectetur adip\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-30T16:00:00.000Z\",\"Category_label\":\"sint occaecat cu\",\"Category_slug\":\"$12.11\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est \",\"Category_parentId\":null},{\"Category_id\":\"5fdaa078-5fe6-45cd-afe5-178210333dc9\",\"Category_order\":5,\"Category_desc\":\"el\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-01T16:00:00.000Z\",\"Category_label\":\"cupidatat non proident, sunt in culpa qui officia deseru\",\"Category_slug\":\"$94.17\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolo\",\"Category_parentId\":null},{\"Category_id\":\"673dabcb-992e-4c2f-8f74-61d101291102\",\"Category_order\":6,\"Category_desc\":\"in voluptate velit esse cillum dolore eu fugiat nul\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-02T16:00:00.000Z\",\"Category_label\":\"amet, consectetur adipiscing elit, sed do eius\",\"Category_slug\":\"$8.73\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"sint occaecat cupidatat non proident, sunt in \",\"Category_parentId\":null},{\"Category_id\":\"f29b76cf-9649-46c2-8c3c-a68a1d1de832\",\"Category_order\":7,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-03T16:00:00.000Z\",\"Category_label\":\"dolore magna aliqua. Ut enim ad minim veniam, quis nost\",\"Category_slug\":\"$2.36\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci\",\"Category_parentId\":null},{\"Category_id\":\"cc77d645-4c51-4515-b245-cbead2fae18d\",\"Category_order\":8,\"Category_desc\":\"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-04T16:00:00.000Z\",\"Category_label\":\"veniam, quis nostrud exercitation ullamco laboris nisi\",\"Category_slug\":\"$717.76\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"consectetur adipiscing\",\"Category_parentId\":null},{\"Category_id\":\"8598086f-3664-4a0b-b6e4-f6577d9afefd\",\"Category_order\":9,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris ni\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-05T16:00:00.000Z\",\"Category_label\":\"nulla pariatur. Excepteur sint occaecat cupidatat \",\"Category_slug\":\"$6.79\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"adi\",\"Category_parentId\":null},{\"Category_id\":\"00af81d7-d522-4f02-b5c0-315a28e4108b\",\"Category_order\":10,\"Category_desc\":\"ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute \",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-06T16:00:00.000Z\",\"Category_label\":\"sit amet, consectetur adipiscing elit, s\",\"Category_slug\":\"$77.44\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolore magna aliqua. Ut enim ad mi\",\"Category_parentId\":null}]"}
+*3
+$9
+PEXPIREAT
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$13
+1575011697400
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1575011637413,"duration":60000,"result":"[{\"cnt\":\"499\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1575011697413
+*3
+$3
+set
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 490 -- PARAMETERS: []
+$5204
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 OFFSET 490 -- PARAMETERS: []","time":1575011658231,"duration":60000,"result":"[{\"Category_id\":\"9539e2ac-2b19-45b4-be5b-681535f4dfd8\",\"Category_order\":492,\"Category_desc\":\"Excepteur sint occaecat cupidatat non proident, sunt in culp\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2021-04-01T16:00:00.000Z\",\"Category_label\":\"eu fugiat nulla pariatur. Excepteur sin\",\"Category_slug\":\"$2.84\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"sint occaecat cupidata\",\"Category_parentId\":null},{\"Category_id\":\"4b4fe7e4-33aa-49ae-a92a-51492ebdbd91\",\"Category_order\":493,\"Category_desc\":\"incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation u\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2021-04-02T16:00:00.000Z\",\"Category_label\":\"sint occaecat cupidatat non proident, sunt in culpa qui off\",\"Category_slug\":\"$38.56\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excep\",\"Category_parentId\":null},{\"Category_id\":\"ad95344f-aeb8-4744-835d-d749629df7cc\",\"Category_order\":494,\"Category_desc\":\"conseq\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2021-04-03T16:00:00.000Z\",\"Category_label\":\"nostrud exercitation \",\"Category_slug\":\"$74.35\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, su\",\"Category_parentId\":null},{\"Category_id\":\"41f98bf8-8147-411e-9414-2e9e54824717\",\"Category_order\":495,\"Category_desc\":\"ipsum dolor sit amet, consectetur\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2021-04-04T16:00:00.000Z\",\"Category_label\":\"laborum.Lorem ipsum dolo\",\"Category_slug\":\"$1.74\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"elit, sed do eiusmod tempor in\",\"Category_parentId\":null},{\"Category_id\":\"55000391-050c-4120-8d36-841b844137b0\",\"Category_order\":496,\"Category_desc\":\"deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing e\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2021-04-05T16:00:00.000Z\",\"Category_label\":\"Ut enim ad minim veniam, quis nostrud exercitation ullamco\",\"Category_slug\":\"$62.23\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolore magna aliqua. Ut enim ad minim v\",\"Category_parentId\":null},{\"Category_id\":\"3c33615a-1d1a-448a-bf61-8b963ea04892\",\"Category_order\":497,\"Category_desc\":\"fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2021-04-06T16:00:00.000Z\",\"Category_label\":\"non \",\"Category_slug\":\"$66.61\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolor in reprehenderit in voluptate velit esse cillum dolore eu f\",\"Category_parentId\":null},{\"Category_id\":\"c1b0f835-a345-40f5-ba11-0bac3e2fce17\",\"Category_order\":498,\"Category_desc\":\"in voluptate velit esse cillum dolore eu fugiat n\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2021-04-07T16:00:00.000Z\",\"Category_label\":\"dolor sit amet, consectetur adipiscing elit, sed do \",\"Category_slug\":\"$2.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"tempor incididunt ut labore et dolore magna aliqua. U\",\"Category_parentId\":null},{\"Category_id\":\"6c9b0505-d5cd-4000-b2b2-9cf6e79090a9\",\"Category_order\":499,\"Category_desc\":\"ullamco laboris nisi ut aliquip ex ea commodo consequat. Du\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2021-04-08T16:00:00.000Z\",\"Category_label\":\"est laborum.Lorem\",\"Category_slug\":\"$1.38\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"non proident, sunt in culpa qui offici\",\"Category_parentId\":null},{\"Category_id\":\"203d0007-99da-4980-80a3-d95f7d31a270\",\"Category_order\":500,\"Category_desc\":\"sit amet, consectetur adipiscing elit, sed do eiusmo\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2021-04-09T16:00:00.000Z\",\"Category_label\":\"consequat. Duis aute irure dolo\",\"Category_slug\":\"$23.37\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum\",\"Category_parentId\":null}]"}
+*3
+$9
+PEXPIREAT
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 490 -- PARAMETERS: []
+$13
+1575011718232
+*3
+$3
+set
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$702
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []","time":1575011663184,"duration":60000,"result":"[]"}
+*3
+$9
+PEXPIREAT
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$13
+1575011723184
+*2
+$3
+DEL
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1575011697570,"duration":60000,"result":"[{\"cnt\":\"499\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1575011757570
+*2
+$3
+DEL
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 490 -- PARAMETERS: []
+*2
+$3
+DEL
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1575011731869,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1575011818269
+*3
+$3
+set
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$702
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []","time":1575011731878,"duration":60000,"result":"[]"}
+*3
+$9
+PEXPIREAT
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$13
+1575011791879
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*2
+$3
+DEL
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1575012001565,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1575012087966
+*3
+$3
+set
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$702
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []","time":1575012001574,"duration":60000,"result":"[]"}
+*3
+$9
+PEXPIREAT
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$13
+1575012061574
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1575012001580,"duration":60000,"result":"[{\"cnt\":\"499\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1575012061580
+*2
+$3
+DEL
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*3
+$3
+set
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$702
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []","time":1575012079822,"duration":60000,"result":"[]"}
+*3
+$9
+PEXPIREAT
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$13
+1575012139822
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1575012079825,"duration":60000,"result":"[{\"cnt\":\"499\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1575012139825
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1575012103339,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1575012189739
+*2
+$3
+DEL
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*3
+$3
+set
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$702
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []","time":1575012149894,"duration":60000,"result":"[]"}
+*3
+$9
+PEXPIREAT
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+$13
+1575012209894
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1575012149898,"duration":60000,"result":"[{\"cnt\":\"499\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1575012209898
+*3
+$3
+set
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 510 -- PARAMETERS: []
+$702
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 OFFSET 510 -- PARAMETERS: []","time":1575012163359,"duration":60000,"result":"[]"}
+*3
+$9
+PEXPIREAT
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 510 -- PARAMETERS: []
+$13
+1575012223359
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*2
+$3
+DEL
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 500 -- PARAMETERS: []
+*2
+$3
+DEL
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 510 -- PARAMETERS: []
+*3
+$3
+set
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$1406
+{"query":"SELECT \"User\".\"id\" AS \"User_id\", \"User\".\"order\" AS \"User_order\", \"User\".\"desc\" AS \"User_desc\", \"User\".\"createdAt\" AS \"User_createdAt\", \"User\".\"updatedAt\" AS \"User_updatedAt\", \"User\".\"name\" AS \"User_name\", \"User\".\"password\" AS \"User_password\", \"User\".\"salt\" AS \"User_salt\", \"User\".\"email\" AS \"User_email\", \"User\".\"avatar\" AS \"User_avatar\", \"User\".\"url\" AS \"User_url\", \"User\".\"screenName\" AS \"User_screenName\", \"User\".\"exInfo\" AS \"User_exInfo\", \"User\".\"lastIp\" AS \"User_lastIp\", \"User\".\"lastTime\" AS \"User_lastTime\" FROM \"l_user\" \"User\" WHERE \"User\".\"name\" = $1 LIMIT 1 -- PARAMETERS: [\"lee\"]","time":1575013339542,"duration":86400,"result":"[{\"User_id\":\"9a379c0c-e00f-4116-87dc-3d58458e07be\",\"User_order\":0,\"User_desc\":\"这是一段默认的描述\",\"User_createdAt\":\"2019-11-28T09:11:24.395Z\",\"User_updatedAt\":\"2019-11-28T09:13:09.574Z\",\"User_name\":\"lee\",\"User_password\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipeQ63JKlbLLrF3w8FVwVT5/UEifW2ATpG\",\"User_salt\":\"$2b$10$hBIy4VaCV7KPIL2xfWvipe\",\"User_email\":\"1982890538@qq.com\",\"User_avatar\":\"https://s.gravatar.com/avatar/54ed5f99a080b72b65da031c53d44578?s=100&r=x&d=retro\",\"User_url\":null,\"User_screenName\":null,\"User_exInfo\":null,\"User_lastIp\":\"::ffff:127.0.0.1\",\"User_lastTime\":\"2019-11-28T09:13:09.568Z\"}]"}
+*3
+$9
+PEXPIREAT
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]
+$13
+1575013425942
+*3
+$3
+set
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 510 -- PARAMETERS: []
+$702
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 OFFSET 510 -- PARAMETERS: []","time":1575013339563,"duration":60000,"result":"[]"}
+*3
+$9
+PEXPIREAT
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 510 -- PARAMETERS: []
+$13
+1575013399563
+*3
+$3
+set
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$186
+{"query":"SELECT COUNT(DISTINCT(\"Category\".\"id\")) as \"cnt\" FROM \"l_category\" \"Category\" -- PARAMETERS: []","time":1575013339566,"duration":60000,"result":"[{\"cnt\":\"499\"}]"}
+*3
+$9
+PEXPIREAT
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+$13
+1575013399567
+*3
+$3
+set
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$5547
+{"query":"SELECT \"Category\".\"id\" AS \"Category_id\", \"Category\".\"order\" AS \"Category_order\", \"Category\".\"desc\" AS \"Category_desc\", \"Category\".\"createdAt\" AS \"Category_createdAt\", \"Category\".\"updatedAt\" AS \"Category_updatedAt\", \"Category\".\"label\" AS \"Category_label\", \"Category\".\"slug\" AS \"Category_slug\", \"Category\".\"cateNum\" AS \"Category_cateNum\", \"Category\".\"archNum\" AS \"Category_archNum\", \"Category\".\"mpath\" AS \"Category_mpath\", \"Category\".\"parentId\" AS \"Category_parentId\" FROM \"l_category\" \"Category\" ORDER BY \"Category\".\"order\" ASC LIMIT 10 -- PARAMETERS: []","time":1575013343447,"duration":60000,"result":"[{\"Category_id\":\"92bae8c6-8fa5-4951-bb59-4e2038e62ddc\",\"Category_order\":1,\"Category_desc\":\"exercitation ullam\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-27T16:00:00.000Z\",\"Category_label\":\"laboris nisi ut aliquip ex ea comm\",\"Category_slug\":\"$1.22\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"mollit anim id est laborum.Lorem ipsu\",\"Category_parentId\":null},{\"Category_id\":\"c1025ee0-ef7c-4e73-a572-2dfae7691813\",\"Category_order\":2,\"Category_desc\":\"ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-28T16:00:00.000Z\",\"Category_label\":\"ipsum dolor sit amet, \",\"Category_slug\":\"$58468.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in volupta\",\"Category_parentId\":null},{\"Category_id\":\"7eecbe10-7db6-48cc-9ae7-7e2da45efb1b\",\"Category_order\":3,\"Category_desc\":\"tempor incidi\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-29T16:00:00.000Z\",\"Category_label\":\"in reprehenderit in voluptate velit esse cill\",\"Category_slug\":\"$39.88\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"veniam, quis nostrud exercitation ullamco la\",\"Category_parentId\":null},{\"Category_id\":\"8c2ab00d-c22c-43e1-b7ec-038b24480836\",\"Category_order\":4,\"Category_desc\":\"consectetur adip\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-11-30T16:00:00.000Z\",\"Category_label\":\"sint occaecat cu\",\"Category_slug\":\"$12.11\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est \",\"Category_parentId\":null},{\"Category_id\":\"5fdaa078-5fe6-45cd-afe5-178210333dc9\",\"Category_order\":5,\"Category_desc\":\"el\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-01T16:00:00.000Z\",\"Category_label\":\"cupidatat non proident, sunt in culpa qui officia deseru\",\"Category_slug\":\"$94.17\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolo\",\"Category_parentId\":null},{\"Category_id\":\"673dabcb-992e-4c2f-8f74-61d101291102\",\"Category_order\":6,\"Category_desc\":\"in voluptate velit esse cillum dolore eu fugiat nul\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-02T16:00:00.000Z\",\"Category_label\":\"amet, consectetur adipiscing elit, sed do eius\",\"Category_slug\":\"$8.73\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"sint occaecat cupidatat non proident, sunt in \",\"Category_parentId\":null},{\"Category_id\":\"f29b76cf-9649-46c2-8c3c-a68a1d1de832\",\"Category_order\":7,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-03T16:00:00.000Z\",\"Category_label\":\"dolore magna aliqua. Ut enim ad minim veniam, quis nost\",\"Category_slug\":\"$2.36\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci\",\"Category_parentId\":null},{\"Category_id\":\"cc77d645-4c51-4515-b245-cbead2fae18d\",\"Category_order\":8,\"Category_desc\":\"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non pro\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-04T16:00:00.000Z\",\"Category_label\":\"veniam, quis nostrud exercitation ullamco laboris nisi\",\"Category_slug\":\"$717.76\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"consectetur adipiscing\",\"Category_parentId\":null},{\"Category_id\":\"8598086f-3664-4a0b-b6e4-f6577d9afefd\",\"Category_order\":9,\"Category_desc\":\"veniam, quis nostrud exercitation ullamco laboris ni\",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-05T16:00:00.000Z\",\"Category_label\":\"nulla pariatur. Excepteur sint occaecat cupidatat \",\"Category_slug\":\"$6.79\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"adi\",\"Category_parentId\":null},{\"Category_id\":\"00af81d7-d522-4f02-b5c0-315a28e4108b\",\"Category_order\":10,\"Category_desc\":\"ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute \",\"Category_createdAt\":\"1999-12-31T16:00:00.000Z\",\"Category_updatedAt\":\"2019-12-06T16:00:00.000Z\",\"Category_label\":\"sit amet, consectetur adipiscing elit, s\",\"Category_slug\":\"$77.44\",\"Category_cateNum\":0,\"Category_archNum\":0,\"Category_mpath\":\"dolore magna aliqua. Ut enim ad mi\",\"Category_parentId\":null}]"}
+*3
+$9
+PEXPIREAT
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+$13
+1575013403447
+*2
+$3
+DEL
+$95
+SELECT COUNT(DISTINCT("Category"."id")) as "cnt" FROM "l_category" "Category" -- PARAMETERS: []
+*2
+$3
+DEL
+$564
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 OFFSET 510 -- PARAMETERS: []
+*2
+$3
+DEL
+$553
+SELECT "Category"."id" AS "Category_id", "Category"."order" AS "Category_order", "Category"."desc" AS "Category_desc", "Category"."createdAt" AS "Category_createdAt", "Category"."updatedAt" AS "Category_updatedAt", "Category"."label" AS "Category_label", "Category"."slug" AS "Category_slug", "Category"."cateNum" AS "Category_cateNum", "Category"."archNum" AS "Category_archNum", "Category"."mpath" AS "Category_mpath", "Category"."parentId" AS "Category_parentId" FROM "l_category" "Category" ORDER BY "Category"."order" ASC LIMIT 10 -- PARAMETERS: []
+*2
+$3
+DEL
+$590
+SELECT "User"."id" AS "User_id", "User"."order" AS "User_order", "User"."desc" AS "User_desc", "User"."createdAt" AS "User_createdAt", "User"."updatedAt" AS "User_updatedAt", "User"."name" AS "User_name", "User"."password" AS "User_password", "User"."salt" AS "User_salt", "User"."email" AS "User_email", "User"."avatar" AS "User_avatar", "User"."url" AS "User_url", "User"."screenName" AS "User_screenName", "User"."exInfo" AS "User_exInfo", "User"."lastIp" AS "User_lastIp", "User"."lastTime" AS "User_lastTime" FROM "l_user" "User" WHERE "User"."name" = $1 LIMIT 1 -- PARAMETERS: ["lee"]

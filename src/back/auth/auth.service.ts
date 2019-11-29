@@ -16,15 +16,29 @@ import { compareSync } from 'bcrypt';
 export class AuthService {
   private logger: Logger;
 
+  /**
+   * Creates an instance of AuthService.
+   * @param {Repository<User>} repo
+   * @param {JwtService} jwtService
+   * @param {*} config
+   * @memberof AuthService
+   */
   constructor(
     @InjectRepository(User)
     private readonly repo: Repository<User>,
     private readonly jwtService: JwtService,
-    @InjectConfig() private readonly config,
+    @InjectConfig() private readonly config: any,
   ) {
     this.logger = new Logger(AuthService.name);
   }
 
+  /**
+   * @description
+   * @param {NewUserInput} data
+   * @param {string} ip
+   * @returns {Promise<User>}
+   * @memberof AuthService
+   */
   public async SignUp(data: NewUserInput, ip: string): Promise<User> {
     const result = await this.repo.findOne({
       where: [
@@ -43,6 +57,13 @@ export class AuthService {
     return this.repo.save(this.repo.create(data));
   }
 
+  /**
+   * @description
+   * @param {LoginUserInput} data
+   * @param {string} ip
+   * @returns
+   * @memberof AuthService
+   */
   public async SignIn(data: LoginUserInput, ip: string) {
     const name = await this.repo.findOne({
       name: data.name,
@@ -73,6 +94,12 @@ export class AuthService {
     };
   }
 
+  /**
+   * @description validate
+   * @param {*} payload
+   * @returns {Promise<User>}
+   * @memberof AuthService
+   */
   public async validateUser(payload: any): Promise<User> {
     return await this.repo.findOne(
       { name: payload.nick_name },

@@ -4,18 +4,37 @@ import { ClassType } from 'type-graphql';
 import { BaseDto } from './base.dto';
 import { GetRecipesArgs } from './base.args';
 
+/**
+ * @description BaseResolver
+ * @export
+ * @template E
+ * @template P
+ * @param {E} EntityClass
+ * @param {P} Paginates
+ * @returns {*}
+ */
 export function BaseResolver<E extends ClassType, P extends ClassType>(
   EntityClass: E,
   Paginates: P,
 ): any {
   const EVENT_NAME = `OnChange${EntityClass.name}`;
-
+  /**
+   * @description Resolvers
+   * @abstract
+   * @class Resolvers
+   */
   abstract class Resolvers {
     protected constructor(
       protected service: BaseService<E>,
       protected readonly pubSub,
     ) {}
 
+    /**
+     * @description getMany
+     * @param {GetRecipesArgs} { limit, page }
+     * @returns
+     * @memberof Resolvers
+     */
     @Query(() => Paginates, {
       name: `all${EntityClass.name}`,
       description: `Get multiple **${EntityClass.name}**`,
@@ -24,13 +43,25 @@ export function BaseResolver<E extends ClassType, P extends ClassType>(
       return await this.service.getMany({ limit, page });
     }
 
+    /**
+     * @description getOne
+     * @param {BaseDto} { id }
+     * @returns {Promise<Partial<E>>}
+     * @memberof Resolvers
+     */
     @Query(() => EntityClass, {
       name: `one${EntityClass.name}`,
     })
-    public async getOne(@Args() { id }: BaseDto): Promise<E> {
+    public async getOne(@Args() { id }: BaseDto): Promise<Partial<E>> {
       return await this.service.getOne(id);
     }
 
+    /**
+     * @description deleteOne
+     * @param {BaseDto} { id }
+     * @returns {Promise<boolean>}
+     * @memberof Resolvers
+     */
     @Mutation(() => Boolean, {
       name: `delete${EntityClass.name}`,
     })
@@ -40,6 +71,11 @@ export function BaseResolver<E extends ClassType, P extends ClassType>(
       return (await this.service.deleteOne(id)) ? true : false;
     }
 
+    /**
+     * @description OnChange
+     * @returns
+     * @memberof Resolvers
+     */
     @Subscription(() => Paginates, {
       nullable: true,
       name: EVENT_NAME,

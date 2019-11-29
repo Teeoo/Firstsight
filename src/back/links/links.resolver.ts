@@ -1,5 +1,4 @@
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
-import { TagsService } from '../tags/tags.service';
 import { ObjectType } from 'type-graphql';
 import { BasePaginate } from '../../shared/base/base.paginate';
 import { Links } from '../../database/entity/links.entity';
@@ -13,6 +12,11 @@ export class LinksPaginate extends BasePaginate(Links) {}
 
 @Resolver('Links')
 export class LinksResolver extends BaseResolver(Links, LinksPaginate) {
+  /**
+   * Creates an instance of LinksResolver.
+   * @param {LinksService} service
+   * @memberof LinksResolver
+   */
   constructor(protected readonly service: LinksService) {
     super(service);
   }

@@ -16,3 +16,11 @@ export class Pagination {
   @Field(type => Int, { defaultValue: 10, nullable: true })
   public limit: number = 10;
 }
+
+export class Paginate {
+  public total: number;
+  public per_page: number;
+  public current_page: number;
+  public last_page: number;
+  public data: any;
+}

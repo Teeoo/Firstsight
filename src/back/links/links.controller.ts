@@ -7,6 +7,11 @@ import { NewLinksInput, UpdateLinksInput } from './links.dto';
 
 @Controller('links')
 export class LinksController extends BaseController<Links> {
+  /**
+   * Creates an instance of LinksController.
+   * @param {LinksService} service
+   * @memberof LinksController
+   */
   constructor(protected readonly service: LinksService) {
     super(service);
   }
