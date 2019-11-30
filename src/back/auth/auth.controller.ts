@@ -11,6 +11,7 @@ import { LoginUserInput, NewUserInput } from './auth.dto';
 import { Request } from 'express';
 
 @Controller('auth')
+@UseInterceptors(ClassSerializerInterceptor)
 export class AuthController {
   /**
    * Creates an instance of AuthController.

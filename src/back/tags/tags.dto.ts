@@ -1,4 +1,4 @@
-import { ArgsType, Field, InputType, Int } from 'type-graphql';
+import { Field, InputType } from 'type-graphql';
 import { IsNotEmpty, IsOptional } from 'class-validator';
 import { Tags } from '../../database/entity/tags.entity';
 

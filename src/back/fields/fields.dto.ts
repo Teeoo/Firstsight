@@ -1,5 +1,5 @@
 import { Fields } from './../../database/entity/fields.entity';
-import { Field, InputType, Int } from 'type-graphql';
+import { Field, InputType } from 'type-graphql';
 import { IsNotEmpty } from 'class-validator';
 
 @InputType({ description: 'Create a fields input' })

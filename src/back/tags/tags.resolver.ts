@@ -19,14 +19,18 @@ export class TagsResolver extends BaseResolver(Tags, TagsPaginate) {
     super(service);
   }
 
-  @Mutation(() => Tags)
+  @Mutation(() => Tags, {
+    description: `Create ${Tags.name}`,
+  })
   public async newTags(
     @Args('data') data: NewTagsInput,
   ): Promise<Tags | Tags[]> {
     return await this.service.createOne(data);
   }
 
-  @Mutation(() => Tags)
+  @Mutation(() => Tags, {
+    description: `Update ${Tags.name}`,
+  })
   public async updateTags(
     @Args() { id }: BaseDto,
     @Args('data') data: UpdateTagsInput,

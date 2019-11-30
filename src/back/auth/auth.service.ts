@@ -1,9 +1,4 @@
-import {
-  BadRequestException,
-  HttpException,
-  Injectable,
-  Logger,
-} from '@nestjs/common';
+import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { InjectConfig } from 'nestjs-config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { JwtService } from '@nestjs/jwt';
@@ -103,7 +98,6 @@ export class AuthService {
   public async validateUser(payload: any): Promise<User> {
     return await this.repo.findOne(
       { name: payload.nick_name },
-      // 24 * 60 * 60
       {
         cache: 24 * 60 * 60,
       },

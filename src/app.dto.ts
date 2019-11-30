@@ -1,4 +1,4 @@
-import { IsNumber, IsString } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class Pagination {
   @IsString()

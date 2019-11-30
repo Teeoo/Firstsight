@@ -21,14 +21,18 @@ export class LinksResolver extends BaseResolver(Links, LinksPaginate) {
     super(service);
   }
 
-  @Mutation(() => Links)
+  @Mutation(() => Links, {
+    description: `Create ${Links.name}`,
+  })
   public async newLinks(
     @Args('data') data: NewLinksInput,
   ): Promise<Links | Links[]> {
     return await this.service.createOne(data);
   }
 
-  @Mutation(() => Links)
+  @Mutation(() => Links, {
+    description: `Update ${Links.name}`,
+  })
   public async updateLinks(
     @Args() { id }: BaseDto,
     @Args('data') data: UpdateLinksInput,

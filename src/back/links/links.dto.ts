@@ -1,4 +1,4 @@
-import { Field, InputType, Int } from 'type-graphql';
+import { Field, InputType } from 'type-graphql';
 import { IsNotEmpty, IsOptional, IsUrl, IsEmail } from 'class-validator';
 import { Links } from '../../database/entity/links.entity';
 

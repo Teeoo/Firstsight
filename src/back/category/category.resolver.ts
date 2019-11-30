@@ -47,7 +47,9 @@ export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
    * @returns {Promise<Category[]>}
    * @memberof CategoryResolver
    */
-  @Query(() => [Category])
+  @Query(() => [Category], {
+    description: `Get ${Category.name} Tree`,
+  })
   public async getCategoryTree(): Promise<Category[]> {
     return await this.service.getTrees();
   }
@@ -58,7 +60,9 @@ export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
    * @returns {(Promise<Category | Category[]>)}
    * @memberof CategoryResolver
    */
-  @Mutation(() => Category)
+  @Mutation(() => Category, {
+    description: `Create ${Category.name}`,
+  })
   public async newCategory(
     @Args('data') data: NewCategoryInput,
   ): Promise<Category | Category[]> {
@@ -76,7 +80,9 @@ export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
    * @returns {Promise<Category>}
    * @memberof CategoryResolver
    */
-  @Mutation(() => Category)
+  @Mutation(() => Category, {
+    description: `Update ${Category.name}`,
+  })
   public async updateCategory(
     @Args() { id }: BaseDto,
     @Args('data') data: UpdateCategoryInput,

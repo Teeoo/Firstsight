@@ -1,7 +1,6 @@
 import { Controller, UseGuards } from '@nestjs/common';
 import { BaseController } from '../../shared/base/base.controller';
 import { Article } from '../../database/entity/article.entity';
-import { CategoryService } from '../category/category.service';
 import { ArticleService } from './article.service';
 import { Auth } from '../../shared/guards/auth.guard';
 

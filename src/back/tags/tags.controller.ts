@@ -6,6 +6,7 @@ import { NewTagsInput, UpdateTagsInput } from './tags.dto';
 import { TagsService } from './tags.service';
 import { Tags } from '../../database/entity/tags.entity';
 
+@UseGuards(new Auth())
 @Controller('tags')
 export class TagsController extends BaseController<Tags> {
   constructor(protected readonly service: TagsService) {

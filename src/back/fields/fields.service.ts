@@ -1,8 +1,7 @@
-import { forwardRef, Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { BaseService } from '../../shared/base/base.service';
 import { Fields } from '../../database/entity/fields.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Article } from '../../database/entity/article.entity';
 import { TreeRepository } from 'typeorm';
 
 @Injectable()
