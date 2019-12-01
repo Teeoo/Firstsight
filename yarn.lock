@@ -13,6 +13,17 @@
     rxjs "6.4.0"
     source-map "0.7.3"
 
+"@angular-devkit/core@8.3.20":
+  version "8.3.20"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.3.20.tgz#8a9e17e706905efab9875c16690e1d9328c9d5dd"
+  integrity sha512-UCfW/BJBJnioJU34QennQhA4o+rLoCXWiSrI2LM7yw8/MEM9I8KbqRETP1My3HjHkQnvP+Qh3noedpcu3Nnt8A==
+  dependencies:
+    ajv "6.10.2"
+    fast-json-stable-stringify "2.0.0"
+    magic-string "0.25.3"
+    rxjs "6.4.0"
+    source-map "0.7.3"
+
 "@angular-devkit/schematics-cli@0.803.19":
   version "0.803.19"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics-cli/-/schematics-cli-0.803.19.tgz#b827771adaa2c87f97f99ea0f8d8922c1c2edca7"
@@ -32,6 +43,14 @@
   integrity sha512-sHZMRypW5ZMvla8uMOTsAYHwPiBpShz31tJzd7F07gs9hpj3J05FZ3nL+ZVdt25YzdCUPaFPQKyVx2YfjGyJAw==
   dependencies:
     "@angular-devkit/core" "8.3.19"
+    rxjs "6.4.0"
+
+"@angular-devkit/schematics@8.3.20":
+  version "8.3.20"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-8.3.20.tgz#80e7c31ebfd8f7f8500bfa1cae5c39980b962d6a"
+  integrity sha512-sDHZakh4e3A5WenR9zr1x6Va9GNRqQlRhqT3xcbkG88v2M0YqEt7dHB7YwnOhm7zSxiWQM8PdWEQHiQ4iu9NyQ==
+  dependencies:
+    "@angular-devkit/core" "8.3.20"
     rxjs "6.4.0"
 
 "@apollo/protobufjs@^1.0.3":
@@ -454,7 +473,18 @@
     express "4.17.1"
     multer "1.4.2"
 
-"@nestjs/schematics@6.7.3", "@nestjs/schematics@^6.6.3":
+"@nestjs/schematics@6.7.5":
+  version "6.7.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/schematics/-/schematics-6.7.5.tgz#03d7c3623de5df296d3b3334d07b4588c11a0682"
+  integrity sha512-L49Q1VRR/0BCM7eD6gpTDxe827epQMgxQLUfTRhMMfw8A0goyqsckeycuvMisvnJq6HOd2e6ogiUr94Bz26BBg==
+  dependencies:
+    "@angular-devkit/core" "8.3.20"
+    "@angular-devkit/schematics" "8.3.20"
+    fs-extra "^8.1.0"
+    ts-morph "^4.0.0"
+    typescript "3.4.5"
+
+"@nestjs/schematics@^6.6.3":
   version "6.7.3"
   resolved "https://registry.yarnpkg.com/@nestjs/schematics/-/schematics-6.7.3.tgz#8e00c3aa86061def5abc9e37ee6f0d061fd6c3b8"
   integrity sha512-86MBFWOProHEXcV8eDz6bU5A9FIRKL2C/zd61y9D1iowgo22XhscYh/9275Heqnkyx1cdjQGKMwUWjakO13DZg==
