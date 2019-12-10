@@ -1,12 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, Res, HttpStatus } from '@nestjs/common';
+import { Response } from 'express';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
   @Get()
-  public getHello(): string {
-    return this.appService.getHello();
+  public home(@Res() res: Response): object {
+    return res.status(HttpStatus.OK).json({
+      status: 'success',
+      message: 'Good Luck To You!',
+      result: {
+        'GRAPHQL APIS': 'https://api.teeoo.cn/graphql',
+        'RESTful API': 'https://api.teeoo.cn/',
+      },
+      github: 'https://github.com/Teeoo',
+    });
   }
 }
