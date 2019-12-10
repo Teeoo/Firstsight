@@ -7,7 +7,7 @@ export class AppController {
   public home(@Res() res: Response): object {
     return res.status(HttpStatus.OK).json({
       status: 'success',
-      message: 'Good Luck To You!',
+      message: '愿你历尽千帆,归来仍是少年',
       result: {
         'GRAPHQL APIS': 'https://api.teeoo.cn/graphql',
         'RESTful API': 'https://api.teeoo.cn/',
