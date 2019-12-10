@@ -12,6 +12,9 @@ export class NewTagsInput implements Partial<Tags> {
   @IsOptional()
   public slug: string;
 
+  @Field({ nullable: true, description: '描述' })
+  public desc: string;
+
   @Field({ nullable: true, description: '颜色' })
   @IsOptional()
   public color: string;

@@ -79,7 +79,6 @@ export function BaseResolver<E extends ClassType, P extends ClassType>(
     })
     public async deleteOne(@Args() { id }: BaseDto): Promise<boolean> {
       const result = await this.service.getMany({ limit: 10, page: 1 });
-      await this.pubSub.publish(EVENT_NAME, { [EVENT_NAME]: result });
       return (await this.service.deleteOne(id)) ? true : false;
     }
 
