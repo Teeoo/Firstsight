@@ -12,6 +12,7 @@ import { TagsModule } from './back/tags/tags.module';
 import { LinksModule } from './back/links/links.module';
 import { HelperModule } from './back/helper/helper.module';
 import { FieldsModule } from './back/fields/fields.module';
+import { AppResolver } from './app.resolver';
 
 @Module({
   imports: [
@@ -35,6 +36,6 @@ import { FieldsModule } from './back/fields/fields.module';
     FieldsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AppResolver],
 })
 export class AppModule {}

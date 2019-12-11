@@ -13,6 +13,7 @@ import { User } from './user.entity';
 import { Category } from './category.entity';
 import { Tags } from './tags.entity';
 import { Fields } from './fields.entity';
+import { type } from 'os';
 
 @ObjectType({ implements: App, description: 'Article Type' })
 @Entity()
@@ -50,7 +51,7 @@ export class Article extends App {
   public template: string;
 
   @Field({ description: '内容类别:{"article":"文章","page":"页面"}' })
-  @Column()
+  @Column({ type: 'enum', enum: ['article', 'page'] })
   public type: string;
 
   @Field({ description: '发布状态:{"发布":true,"草稿":false}' })
@@ -62,6 +63,8 @@ export class Article extends App {
       '内容公开状态:{"publish":"公开","hidden":"隐藏","password":"密码保护"}',
   })
   @Column({
+    type: 'enum',
+    enum: ['publish', 'hidden', 'password'],
     default: 'publish',
   })
   public publish: string;

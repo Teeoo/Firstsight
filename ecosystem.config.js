@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'API',
+      name: 'api.teeoo.cn',
       script: 'yarn start:prod',
       args: 'one two',
       instances: 1,

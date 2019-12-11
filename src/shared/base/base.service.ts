@@ -104,8 +104,9 @@ export abstract class BaseService<T> {
     const [data, total] = await this.repo.findAndCount({
       take: options.limit,
       skip: page * options.limit,
-      cache: 60000,
+      cache: true,
       order,
+      where,
     });
 
     return {

@@ -17,5 +17,6 @@ import { FieldsModule } from '../fields/fields.module';
   ],
   controllers: [ArticleController],
   providers: [ArticleService, ArticleResolver],
+  exports: [ArticleService],
 })
 export class ArticleModule {}

@@ -1,8 +1,10 @@
-import { Controller, Get, Res, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Res, HttpStatus, Query } from '@nestjs/common';
 import { Response } from 'express';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
+  constructor(private appService: AppService) {}
   @Get()
   public home(@Res() res: Response): object {
     return res.status(HttpStatus.OK).json({
@@ -14,5 +16,14 @@ export class AppController {
       },
       github: 'https://github.com/Teeoo',
     });
+  }
+  @Get('article')
+  public async article(
+    @Query('page') page: number = 0,
+    @Query('limit') limit: number = 10,
+    @Query('query') query?: any,
+    @Query('sort') sort?: any,
+  ) {
+    return await this.appService.article(page, limit);
   }
 }
