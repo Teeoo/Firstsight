@@ -9,5 +9,6 @@ import { Links } from '../../database/entity/links.entity';
   imports: [TypeOrmModule.forFeature([Links])],
   controllers: [LinksController],
   providers: [LinksResolver, LinksService],
+  exports: [LinksService],
 })
 export class LinksModule {}

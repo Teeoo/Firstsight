@@ -6,6 +6,8 @@ import { Article } from './database/entity/article.entity';
 import { Category } from './database/entity/category.entity';
 import { Tags } from './database/entity/tags.entity';
 import { Paginate } from './shared/base/base.dto';
+import { Links } from './database/entity/links.entity';
+import { LinksService } from './back/links/links.service';
 
 @Injectable()
 export class AppService {
@@ -14,6 +16,7 @@ export class AppService {
    * @param {ArticleService} articleService
    * @param {CategoryService} cateService
    * @param {TagsService} tagsService
+   * @param {LinksService} linksService
    * @memberof AppService
    */
   constructor(
@@ -23,6 +26,8 @@ export class AppService {
     private readonly cateService: CategoryService,
     @Inject(forwardRef(() => TagsService))
     private readonly tagsService: TagsService,
+    @Inject(forwardRef(() => LinksService))
+    private readonly linksService: LinksService,
   ) {}
 
   /**
@@ -126,6 +131,17 @@ export class AppService {
       order: {
         hot: 'ASC',
       },
+      cache: true,
+    });
+  }
+
+  /**
+   * @description 获取全部友联
+   * @returns {Promise<Links[]>}
+   * @memberof AppService
+   */
+  public async links(): Promise<Links[]> {
+    return await this.linksService.find({
       cache: true,
     });
   }

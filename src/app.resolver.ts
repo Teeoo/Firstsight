@@ -5,6 +5,7 @@ import { ArticlePaginate } from './back/article/article.resolver';
 import { BaseDto } from './shared/base/base.dto';
 import { Category } from './database/entity/category.entity';
 import { Tags } from './database/entity/tags.entity';
+import { Links } from './database/entity/links.entity';
 
 @Resolver('App')
 export class AppResolver {
@@ -50,5 +51,12 @@ export class AppResolver {
   })
   public async tags() {
     return await this.appService.tags();
+  }
+
+  @Query(() => [Links], {
+    description: '获取全部友联',
+  })
+  public async links() {
+    return await this.appService.links();
   }
 }
