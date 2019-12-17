@@ -38,7 +38,7 @@
     "@types/ioredis": "4.14.2",
     "@types/passport-jwt": "3.0.3",
     "@types/transliteration": "1.6.6",
-    "apollo-server-express": "2.9.13",
+    "apollo-server-express": "2.9.14",
     "bcrypt": "3.0.7",
     "class-transformer": "0.2.3",
     "class-validator": "0.11.0",
