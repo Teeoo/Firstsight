@@ -59,7 +59,7 @@
     "rimraf": "3.0.0",
     "rxjs": "6.5.3",
     "transliteration": "2.1.7",
-    "type-graphql": "0.17.5",
+    "type-graphql": "0.17.6",
     "typeorm": "0.2.21",
     "typeorm-seeding": "1.2.0"
   },
