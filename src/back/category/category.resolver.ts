@@ -37,9 +37,9 @@ export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
    */
   constructor(
     protected readonly service: CategoryService,
-    @Inject('REDIS_SUB') private pubSub: PubSubEngine,
+    // @Inject('REDIS_SUB') private pubSub: PubSubEngine,
   ) {
-    super(service, pubSub);
+    super(service);
   }
 
   /**

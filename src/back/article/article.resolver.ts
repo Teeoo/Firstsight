@@ -38,9 +38,9 @@ export class ArticleResolver extends BaseResolver(Article, ArticlePaginate) {
    */
   constructor(
     protected readonly service: ArticleService,
-    @Inject('REDIS_SUB') private pubSub: PubSubEngine,
+    // @Inject('REDIS_SUB') private pubSub: PubSubEngine,
   ) {
-    super(service, pubSub);
+    super(service);
   }
 
   /**

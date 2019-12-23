@@ -18,7 +18,7 @@ services:
     restart: always
     image: redis:alpine
     privileged: true
-    command: ['redis-server', '--appendonly', 'yes']
+    command: redis-server --requirepass ${DB_PASSWORD} --appendonly yes
     volumes:
       - ./data:/data
     ports:

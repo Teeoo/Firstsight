@@ -21,6 +21,7 @@ export default {
     options: {
       host: process.env.CACHE_HOST,
       port: process.env.CACHE_PORT,
+      password:process.env.DB_PASSWORD,
       options: {
         scaleReads: 'all',
       },
