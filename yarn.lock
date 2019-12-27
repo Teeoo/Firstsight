@@ -7443,12 +7443,19 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-transliteration@*, transliteration@2.1.7:
+transliteration@*:
   version "2.1.7"
   resolved "https://registry.yarnpkg.com/transliteration/-/transliteration-2.1.7.tgz#43fbd2e259777516a667a76e1d11aa9f85264413"
   integrity sha512-o3678GPmKKGqOBB+trAKzhBUjHddU18He2V8AKB1XuegaGJekO0xmfkkvbc9LCBat62nb7IH8z5/OJY+mNugkg==
   dependencies:
     yargs "^14.0.0"
+
+transliteration@2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/transliteration/-/transliteration-2.1.8.tgz#b2a032107be42910dbb792ff96b39938114a4eb8"
+  integrity sha512-ds3uRxcS0yCxzP4xP30dz+ImEeVhgAwSaewhlApuYYTUuT8+wFFLoFfO1nHvfJzbpoRBp4lS52Ai3wm8IkemIQ==
+  dependencies:
+    yargs "^15.0.2"
 
 tree-kill@1.2.1:
   version "1.2.1"
@@ -8229,7 +8236,7 @@ yargs@^14.0.0:
     y18n "^4.0.0"
     yargs-parser "^15.0.0"
 
-yargs@^15.0.0:
+yargs@^15.0.0, yargs@^15.0.2:
   version "15.0.2"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.0.2.tgz#4248bf218ef050385c4f7e14ebdf425653d13bd3"
   integrity sha512-GH/X/hYt+x5hOat4LMnCqMd8r5Cv78heOMIJn1hr7QPPBqfeC6p89Y78+WB9yGDvfpCvgasfmWLzNzEioOUD9Q==
