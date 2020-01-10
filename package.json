@@ -33,7 +33,7 @@
     "@nestjs/platform-express": "6.10.12",
     "@nestjs/typeorm": "6.2.0",
     "@types/bcrypt": "3.0.0",
-    "@types/faker": "4.1.8",
+    "@types/faker": "4.1.9",
     "@types/graphql-type-json": "0.3.2",
     "@types/ioredis": "4.14.3",
     "@types/passport-jwt": "3.0.3",
