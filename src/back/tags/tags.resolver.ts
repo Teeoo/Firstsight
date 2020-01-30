@@ -1,26 +1,39 @@
-import { Args, Mutation, Resolver } from '@nestjs/graphql';
+import { Resolver, Mutation, Args } from '@nestjs/graphql';
 import { ObjectType } from 'type-graphql';
-import { BasePaginate } from '../../shared/base/base.paginate';
-import { BaseResolver } from '../../shared/base/base.resolver';
-import { UseGuards } from '@nestjs/common';
-import { Auth } from '../../shared/guards/auth.guard';
-import { BaseDto } from '../../shared/base/base.dto';
-import { NewTagsInput, UpdateTagsInput } from './tags.dto';
+import { BasePaginate, BaseResolver, BaseDto } from '@app/shared';
+import { Tags } from '@app/databases/entity/Tags';
 import { TagsService } from './tags.service';
-import { Tags } from '../../database/entity/tags.entity';
+import { NewTagsInput, UpdateTagsInput } from './tags.dto';
+import { UseGuards } from '@nestjs/common';
+import { AuthorizationGuard } from '@app/core';
 
 @ObjectType()
 export class TagsPaginate extends BasePaginate(Tags) {}
 
-@UseGuards(new Auth())
+@UseGuards(new AuthorizationGuard())
 @Resolver('Tags')
 export class TagsResolver extends BaseResolver(Tags, TagsPaginate) {
+  /**
+   * Creates an instance of TagsResolver.
+   * @author lee
+   * @date 2020-01-20
+   * @param {TagsService} service
+   * @memberof TagsResolver
+   */
   constructor(protected readonly service: TagsService) {
     super(service);
   }
 
+  /**
+   * @description newTags
+   * @author lee
+   * @date 2020-01-20
+   * @param {NewTagsInput} data
+   * @returns {(Promise<Tags | Tags[]>)}
+   * @memberof TagsResolver
+   */
   @Mutation(() => Tags, {
-    description: `Create ${Tags.name}`,
+    description: `Create a new ${Tags.name}`,
   })
   public async newTags(
     @Args('data') data: NewTagsInput,
@@ -28,8 +41,17 @@ export class TagsResolver extends BaseResolver(Tags, TagsPaginate) {
     return await this.service.createOne(data);
   }
 
+  /**
+   * @description updateTags
+   * @author lee
+   * @date 2020-01-20
+   * @param {BaseDto} { id }
+   * @param {UpdateTagsInput} data
+   * @returns {Promise<Tags>}
+   * @memberof TagsResolver
+   */
   @Mutation(() => Tags, {
-    description: `Update ${Tags.name}`,
+    description: `Modify ${Tags.name} based on id`,
   })
   public async updateTags(
     @Args() { id }: BaseDto,

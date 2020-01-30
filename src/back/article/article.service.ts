@@ -1,28 +1,24 @@
 import {
-  forwardRef,
-  Inject,
   Injectable,
+  Inject,
+  forwardRef,
   NotFoundException,
 } from '@nestjs/common';
-import { BaseService } from '../../shared/base/base.service';
-import { Article } from '../../database/entity/article.entity';
+import { BaseService } from '@app/shared';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TreeRepository } from 'typeorm';
 import { CategoryService } from '../category/category.service';
 import { TagsService } from '../tags/tags.service';
-import { User } from '../../database/entity/user.entity';
 import { FieldsService } from '../fields/fields.service';
+import { User } from '@app/databases/entity/User';
+import { Article } from '@app/databases/entity/Article';
 
-/**
- * @description
- * @export
- * @class ArticleService
- * @extends {BaseService<Article>}
- */
 @Injectable()
 export class ArticleService extends BaseService<Article> {
   /**
    * Creates an instance of ArticleService.
+   * @author lee
+   * @date 2020-01-20
    * @param {TreeRepository<Article>} repo
    * @param {CategoryService} cateService
    * @param {TagsService} tagsService
@@ -43,13 +39,15 @@ export class ArticleService extends BaseService<Article> {
   }
 
   /**
-   * @description
+   * @description 创建文章
+   * @author lee
+   * @date 2020-01-20
    * @param {*} data
    * @param {User} user
-   * @returns
+   * @returns {Promise<Article[]>}
    * @memberof ArticleService
    */
-  public async createMany(data: any, user: User) {
+  public async createMany(data: any, user: User): Promise<Article[]> {
     Object.assign(data, { author: user });
     if (data.type === 'article') {
       data.category = await this.cateService.getOne(data.category);
@@ -60,13 +58,15 @@ export class ArticleService extends BaseService<Article> {
   }
 
   /**
-   * @description
+   * @description 修改文章
+   * @author lee
+   * @date 2020-01-20
    * @param {string} id
    * @param {*} data
-   * @returns
+   * @returns {Promise<User>}
    * @memberof ArticleService
    */
-  public async updateMany(id: string, data: any) {
+  public async updateMany(id: string, data: any): Promise<Article> {
     const result = await this.repo.findOne({ id });
     if (!result) {
       throw new NotFoundException(`文章不存在`);

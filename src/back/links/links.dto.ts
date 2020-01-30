@@ -1,6 +1,6 @@
-import { Field, InputType } from 'type-graphql';
+import { InputType, Field } from 'type-graphql';
 import { IsNotEmpty, IsOptional, IsUrl, IsEmail } from 'class-validator';
-import { Links } from '../../database/entity/links.entity';
+import { Links } from '@app/databases/entity/Links';
 
 @InputType({ description: 'create Links data' })
 export class NewLinksInput implements Partial<Links> {

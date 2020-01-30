@@ -1,15 +1,11 @@
-import { forwardRef, Module } from '@nestjs/common';
-import { TagsResolver } from './tags.resolver';
+import { Module } from '@nestjs/common';
 import { TagsService } from './tags.service';
+import { TagsResolver } from './tags.resolver';
 import { TagsController } from './tags.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Tags } from '../../database/entity/tags.entity';
-import { ArticleModule } from '../article/article.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Tags]), forwardRef(() => ArticleModule)],
-  providers: [TagsResolver, TagsService],
-  exports: [TagsService],
+  providers: [TagsService, TagsResolver],
   controllers: [TagsController],
+  exports: [TagsService],
 })
 export class TagsModule {}

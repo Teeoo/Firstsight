@@ -1,24 +1,17 @@
 import { Injectable, Inject, forwardRef, HttpException } from '@nestjs/common';
+import { ArticleService } from './back/article/article.service';
 import { CategoryService } from './back/category/category.service';
 import { TagsService } from './back/tags/tags.service';
-import { ArticleService } from './back/article/article.service';
-import { Article } from './database/entity/article.entity';
-import { Category } from './database/entity/category.entity';
-import { Tags } from './database/entity/tags.entity';
-import { Paginate } from './shared/base/base.dto';
-import { Links } from './database/entity/links.entity';
+import { Article } from '@app/databases/entity/Article';
+import { Paginate } from './shared';
+import { Category } from '@app/databases/entity/Category';
+import { Tags } from '@app/databases/entity/Tags';
+import { Links } from '@app/databases/entity/Links';
 import { LinksService } from './back/links/links.service';
 
 @Injectable()
 export class AppService {
-  /**
-   * Creates an instance of AppService.
-   * @param {ArticleService} articleService
-   * @param {CategoryService} cateService
-   * @param {TagsService} tagsService
-   * @param {LinksService} linksService
-   * @memberof AppService
-   */
+
   constructor(
     @Inject(forwardRef(() => ArticleService))
     private readonly articleService: ArticleService,
@@ -28,10 +21,12 @@ export class AppService {
     private readonly tagsService: TagsService,
     @Inject(forwardRef(() => LinksService))
     private readonly linksService: LinksService,
-  ) {}
+  ) { }
 
   /**
    * @description 获取所有单页面
+   * @author lee
+   * @date 2020-01-26
    * @returns {Promise<Article[]>}
    * @memberof AppService
    */
@@ -48,17 +43,19 @@ export class AppService {
   }
 
   /**
-   * @description 获取分页文章
+   * @description 获取带分页的文章
+   * @author lee
+   * @date 2020-01-26
    * @param {number} [page=0]
    * @param {number} [limit=10]
-   * @returns {Promise<Paginate>}
+   * @returns {Promise<Paginate<Article>>}
    * @memberof AppService
    */
   public async article(
     page: number = 0,
     limit: number = 10,
-  ): Promise<Paginate> {
-    return await this.articleService.getMany(
+  ): Promise<Paginate<Article>> {
+    return await this.articleService.paginator(
       { page, limit },
       { order: 'ASC', isTop: 'DESC' },
       {
@@ -69,6 +66,8 @@ export class AppService {
 
   /**
    * @description 根据id获取文章详情
+   * @author lee
+   * @date 2020-01-26
    * @param {string} id
    * @returns {Promise<Article>}
    * @memberof AppService
@@ -89,6 +88,8 @@ export class AppService {
 
   /**
    * @description 根据id获取页面详情
+   * @author lee
+   * @date 2020-01-26
    * @param {string} id
    * @returns {Promise<Article>}
    * @memberof AppService
@@ -108,7 +109,9 @@ export class AppService {
   }
 
   /**
-   * @description 获取全部分类
+   * @description 获取分类
+   * @author lee
+   * @date 2020-01-26
    * @returns {Promise<Category[]>}
    * @memberof AppService
    */
@@ -122,7 +125,9 @@ export class AppService {
   }
 
   /**
-   * @description 获取全部标签
+   * @description 获取标签
+   * @author lee
+   * @date 2020-01-26
    * @returns {Promise<Tags[]>}
    * @memberof AppService
    */
@@ -136,7 +141,9 @@ export class AppService {
   }
 
   /**
-   * @description 获取全部友联
+   * @description 获取友联
+   * @author lee
+   * @date 2020-01-26
    * @returns {Promise<Links[]>}
    * @memberof AppService
    */
@@ -144,5 +151,33 @@ export class AppService {
     return await this.linksService.find({
       cache: true,
     });
+  }
+
+  /**
+   * @description 文章归档
+   * @author lee
+   * @date 2020-01-26
+   * @returns 
+   * @memberof AppService
+   */
+  public async archive() {
+    const data = await this.articleService.find(
+      {
+        order: { createdAt: 'DESC' },
+        where: {
+          type: 'article',
+        },
+        select: ["id", "title", "createdAt"]
+      }
+    );
+    const result = {}
+    data.forEach(item => {
+      let yearMonth: any = item.createdAt
+      if (!(yearMonth in result)) {
+        result[yearMonth] = [];
+      }
+      result[yearMonth].push(item);
+    })
+    return result
   }
 }

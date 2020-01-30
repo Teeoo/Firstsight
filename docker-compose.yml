@@ -3,22 +3,34 @@ services:
   postgres:
     container_name: postgres
     restart: always
-    image: postgres:11.6
+    image: postgres
     privileged: true
     ports:
-      - '${DB_PORT}:5432'
+      - '${TYPEORM_PORT}:5432'
     environment:
-      POSTGRES_USER: ${DB_USERNAME:-postgres}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
-      POSTGRES_DB: ${DB_DATABASE:-postgres}
+      POSTGRES_USER: ${TYPEORM_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${TYPEORM_PASSWORD:-password}
+      POSTGRES_DB: ${TYPEORM_DATABASE:-postgres}
     networks:
       - bridge
+  graphql-engine:
+    container_name: hasura
+    image: hasura/graphql-engine
+    ports:
+      - "1111:8080"
+    depends_on:
+      - "postgres"
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/postgres
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
   redis:
     container_name: redis
     restart: always
     image: redis:alpine
     privileged: true
-    command: redis-server --requirepass ${DB_PASSWORD} --appendonly yes
+    command: redis-server --requirepass ${CACHE_PASSWORD} --appendonly yes
     volumes:
       - ./data:/data
     ports:
@@ -44,18 +56,6 @@ services:
   #     - bridge
   #   # command: apk add build-base python gcc g++
   #   tty: true
-  mysql:
-    container_name: mysql
-    image: mysql:5.7
-    restart: always
-    privileged: true
-    environment:
-      MYSQL_DATABASE: ${DB_DATABASE:-db}
-      MYSQL_USER: ${DB_USERNAME:-root}
-      MYSQL_PASSWORD: ${DB_DATABASE:-root}
-      MYSQL_ROOT_PASSWORD: ${DB_DATABASE:-root}
-    ports:
-      - '3306:3306'
 networks:
   bridge:
     driver: bridge

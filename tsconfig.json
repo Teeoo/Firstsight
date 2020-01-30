@@ -9,7 +9,42 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@app/databases": [
+        "libs/databases/src"
+      ],
+      "@app/databases/*": [
+        "libs/databases/src/*"
+      ],
+      "@app/common": [
+        "libs/common/src"
+      ],
+      "@app/common/*": [
+        "libs/common/src/*"
+      ],
+      "@app/shared": [
+        "src/shared"
+      ],
+      "@app/shared/*": [
+        "src/shared/*"
+      ],
+      "@app/core": [
+        "src/core"
+      ],
+      "@app/core/*": [
+        "src/core/*"
+      ],
+      "@app/qcloudcos": [
+        "libs/qcloudcos/src"
+      ],
+      "@app/qcloudcos/*": [
+        "libs/qcloudcos/src/*"
+      ]
+    }
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

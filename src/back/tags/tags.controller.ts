@@ -1,12 +1,11 @@
-import { Body, Controller, Param, Post, Put, UseGuards } from '@nestjs/common';
-import { Auth } from '../../shared/guards/auth.guard';
-import { BaseController } from '../../shared/base/base.controller';
-import { BaseDto } from '../../shared/base/base.dto';
-import { NewTagsInput, UpdateTagsInput } from './tags.dto';
+import { Controller, Post, Body, Put, Param, UseGuards } from '@nestjs/common';
+import { BaseController, BaseDto } from '@app/shared';
+import { Tags } from '@app/databases/entity/Tags';
 import { TagsService } from './tags.service';
-import { Tags } from '../../database/entity/tags.entity';
+import { NewTagsInput, UpdateTagsInput } from './tags.dto';
+import { AuthorizationGuard } from '@app/core';
 
-@UseGuards(new Auth())
+@UseGuards(new AuthorizationGuard())
 @Controller('tags')
 export class TagsController extends BaseController<Tags> {
   constructor(protected readonly service: TagsService) {

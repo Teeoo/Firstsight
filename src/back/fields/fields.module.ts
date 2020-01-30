@@ -1,15 +1,11 @@
-import { forwardRef, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { FieldsService } from './fields.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Fields } from '../../database/entity/fields.entity';
-import { ArticleModule } from '../article/article.module';
+import { FieldsResolver } from './fields.resolver';
+import { FieldsController } from './fields.controller';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([Fields]),
-    forwardRef(() => ArticleModule),
-  ],
+  providers: [FieldsService, FieldsResolver],
+  controllers: [FieldsController],
   exports: [FieldsService],
-  providers: [FieldsService],
 })
 export class FieldsModule {}

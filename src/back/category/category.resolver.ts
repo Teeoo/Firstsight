@@ -1,96 +1,48 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Resolver, Mutation, Args, Query } from '@nestjs/graphql';
+import { ObjectType } from 'type-graphql';
+import { Category } from '@app/databases/entity/Category';
 import { CategoryService } from './category.service';
-import { Category } from '../../database/entity/category.entity';
-import { BaseResolver } from '../../shared/base/base.resolver';
-import { ObjectType, PubSubEngine } from 'type-graphql';
-import { BasePaginate } from '../../shared/base/base.paginate';
+import { UseGuards } from '@nestjs/common';
+import { BasePaginate, BaseResolver, BaseDto } from '@app/shared';
+import { AuthorizationGuard } from '@app/core';
 import { NewCategoryInput, UpdateCategoryInput } from './category.dto';
-import { UseGuards, Inject } from '@nestjs/common';
-import { Auth } from '../../shared/guards/auth.guard';
-import { BaseDto } from '../../shared/base/base.dto';
 
-/**
- * @description
- * @export
- * @class CategoryPaginate
- * @extends {BasePaginate(Category)}
- */
-@ObjectType({ description: `CategoryPaginate` })
+@ObjectType({ description: `${Category.name}  Paginate` })
 export class CategoryPaginate extends BasePaginate(Category) {}
 
-/**
- * @description
- * @export
- * @class CategoryResolver
- * @extends {BaseResolver(Category, CategoryPaginate)}
- */
-@UseGuards(new Auth())
+@UseGuards(new AuthorizationGuard())
 @Resolver('Category')
 export class CategoryResolver extends BaseResolver(Category, CategoryPaginate) {
-  public EVENT_NAME = `OnChange${Category.name}`;
-
-  /**
-   * Creates an instance of CategoryResolver.
-   * @param {CategoryService} service
-   * @param {PubSubEngine} pubSub
-   * @memberof CategoryResolver
-   */
-  constructor(
-    protected readonly service: CategoryService,
-    // @Inject('REDIS_SUB') private pubSub: PubSubEngine,
-  ) {
+  constructor(protected readonly service: CategoryService) {
     super(service);
   }
 
-  /**
-   * @description
-   * @returns {Promise<Category[]>}
-   * @memberof CategoryResolver
-   */
   @Query(() => [Category], {
-    description: `Get ${Category.name} Tree`,
+    description: `Query tree ${Category.name} data`,
   })
-  public async getCategoryTree(): Promise<Category[]> {
+  public async getTreeCategory(): Promise<Category[]> {
     return await this.service.getTrees();
   }
 
-  /**
-   * @description
-   * @param {NewCategoryInput} data
-   * @returns {(Promise<Category | Category[]>)}
-   * @memberof CategoryResolver
-   */
   @Mutation(() => Category, {
-    description: `Create ${Category.name}`,
+    description: `Create a new ${Category.name}`,
   })
   public async newCategory(
     @Args('data') data: NewCategoryInput,
   ): Promise<Category | Category[]> {
     const result = await this.service.createOne(data);
-    await this.pubSub.publish(this.EVENT_NAME, {
-      [this.EVENT_NAME]: await this.service.getMany({ limit: 10, page: 1 }),
-    });
     return result;
   }
 
-  /**
-   * @description
-   * @param {BaseDto} { id }
-   * @param {UpdateCategoryInput} data
-   * @returns {Promise<Category>}
-   * @memberof CategoryResolver
-   */
   @Mutation(() => Category, {
-    description: `Update ${Category.name}`,
+    description: `
+    Modify category ${Category.name} based on id`,
   })
   public async updateCategory(
     @Args() { id }: BaseDto,
     @Args('data') data: UpdateCategoryInput,
   ): Promise<Category> {
     const result = await this.service.updateOne(id, data);
-    await this.pubSub.publish(this.EVENT_NAME, {
-      [this.EVENT_NAME]: await this.service.getMany({ limit: 10, page: 1 }),
-    });
     return result;
   }
 }

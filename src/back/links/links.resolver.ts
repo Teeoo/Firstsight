@@ -1,42 +1,41 @@
-import { Args, Mutation, Resolver } from '@nestjs/graphql';
-import { ObjectType } from 'type-graphql';
-import { BasePaginate } from '../../shared/base/base.paginate';
-import { Links } from '../../database/entity/links.entity';
-import { BaseResolver } from '../../shared/base/base.resolver';
+import { Resolver, Mutation, Args } from '@nestjs/graphql';
+import { Links } from '@app/databases/entity/Links';
 import { LinksService } from './links.service';
-import { BaseDto } from '../../shared/base/base.dto';
+import { ObjectType } from 'type-graphql';
+import { BasePaginate, BaseResolver, BaseDto } from '@app/shared';
 import { NewLinksInput, UpdateLinksInput } from './links.dto';
+import { UseGuards } from '@nestjs/common';
+import { AuthorizationGuard } from '@app/core';
 
-@ObjectType()
+@ObjectType({ description: `${Links.name}  Paginate` })
 export class LinksPaginate extends BasePaginate(Links) {}
 
+@UseGuards(new AuthorizationGuard())
 @Resolver('Links')
 export class LinksResolver extends BaseResolver(Links, LinksPaginate) {
-  /**
-   * Creates an instance of LinksResolver.
-   * @param {LinksService} service
-   * @memberof LinksResolver
-   */
   constructor(protected readonly service: LinksService) {
     super(service);
   }
 
   @Mutation(() => Links, {
-    description: `Create ${Links.name}`,
+    description: `Create a new ${Links.name}`,
   })
   public async newLinks(
     @Args('data') data: NewLinksInput,
   ): Promise<Links | Links[]> {
-    return await this.service.createOne(data);
+    const result = await this.service.createOne(data);
+    return result;
   }
 
   @Mutation(() => Links, {
-    description: `Update ${Links.name}`,
+    description: `
+        Modify ${Links.name} based on id`,
   })
   public async updateLinks(
     @Args() { id }: BaseDto,
     @Args('data') data: UpdateLinksInput,
   ): Promise<Links> {
-    return await this.service.updateOne(id, data);
+    const result = await this.service.updateOne(id, data);
+    return result;
   }
 }

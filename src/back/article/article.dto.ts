@@ -6,13 +6,13 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Field, InputType, Int, ArgsType } from 'type-graphql';
-import { NewTagsInput } from '../tags/tags.dto';
 import GraphQLJSON from 'graphql-type-json';
-import { Article } from '../../database/entity/article.entity';
-import { Tags } from '../../database/entity/tags.entity';
-import { Category } from '../../database/entity/category.entity';
+import { Article } from '@app/databases/entity/Article';
+import { Category } from '@app/databases/entity/Category';
+import { NewTagsInput } from '../tags/tags.dto';
+import { Tags } from '@app/databases/entity/Tags';
 import { NewFieldsInput } from '../fields/fields.dto';
-import { Fields } from '../../database/entity/fields.entity';
+import { Fields } from '@app/databases/entity/Fields';
 
 @InputType({ description: 'Create a article input' })
 export class NewArticleInput implements Partial<Article> {

@@ -1,16 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { BaseService } from '../../shared/base/base.service';
-import { Fields } from '../../database/entity/fields.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Fields } from '@app/databases/entity/Fields';
 import { TreeRepository } from 'typeorm';
+import { BaseService } from '@app/shared';
 
 @Injectable()
 export class FieldsService extends BaseService<Fields> {
-  /**
-   * Creates an instance of FieldsService.
-   * @param {TreeRepository<Fields>} repo
-   * @memberof FieldsService
-   */
   constructor(
     @InjectRepository(Fields)
     protected readonly repo: TreeRepository<Fields>,

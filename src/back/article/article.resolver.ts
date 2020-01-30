@@ -1,57 +1,42 @@
-import { Args, Mutation, Resolver } from '@nestjs/graphql';
-import { Category } from '../../database/entity/category.entity';
-import { BaseDto } from '../../shared/base/base.dto';
-import { ObjectType, PubSubEngine } from 'type-graphql';
-import { BasePaginate } from '../../shared/base/base.paginate';
-import { Article } from '../../database/entity/article.entity';
-import { BaseResolver } from '../../shared/base/base.resolver';
-import { NewArticleInput, UpdateArticleInput } from './article.dto';
-import { AuthUser } from '../../shared/decorators/user.decorator';
-import { User } from '../../database/entity/user.entity';
-import { Inject, UseGuards } from '@nestjs/common';
+import { Resolver, Mutation, Args } from '@nestjs/graphql';
+import { ObjectType } from 'type-graphql';
+import { Article } from '@app/databases/entity/Article';
+import { BasePaginate, BaseResolver, BaseDto } from '@app/shared';
 import { ArticleService } from './article.service';
-import { Auth } from '../../shared/guards/auth.guard';
+import { NewArticleInput, UpdateArticleInput } from './article.dto';
+import { User } from '@app/databases/entity/User';
+import { AuthUser } from '@app/core/decorators/user.decorator';
+import { UseGuards } from '@nestjs/common';
+import { AuthorizationGuard } from '@app/core';
 
-/**
- * @description Paginate
- * @export
- * @class ArticlePaginate
- * @extends {BasePaginate(Article)}
- */
 @ObjectType({ description: `${Article.name} Paginate` })
 export class ArticlePaginate extends BasePaginate(Article) {}
 
-/**
- * @description
- * @export
- * @class ArticleResolver
- * @extends {BaseResolver(Article, ArticlePaginate)}
- */
-@UseGuards(new Auth())
+@UseGuards(new AuthorizationGuard())
 @Resolver('Article')
 export class ArticleResolver extends BaseResolver(Article, ArticlePaginate) {
   /**
    * Creates an instance of ArticleResolver.
+   * @author lee
+   * @date 2020-01-20
    * @param {ArticleService} service
-   * @param {PubSubEngine} pubSub
    * @memberof ArticleResolver
    */
-  constructor(
-    protected readonly service: ArticleService,
-    // @Inject('REDIS_SUB') private pubSub: PubSubEngine,
-  ) {
+  constructor(protected readonly service: ArticleService) {
     super(service);
   }
 
   /**
    * @description newArticle
+   * @author lee
+   * @date 2020-01-20
    * @param {NewArticleInput} data
    * @param {User} user
    * @returns {(Promise<Article | Article[]>)}
    * @memberof ArticleResolver
    */
   @Mutation(() => Article, {
-    description: `Create ${Article.name}`,
+    description: `Create a new ${Article.name}`,
   })
   public async newArticle(
     @Args('data') data: NewArticleInput,
@@ -62,18 +47,20 @@ export class ArticleResolver extends BaseResolver(Article, ArticlePaginate) {
 
   /**
    * @description updateArticle
+   * @author lee
+   * @date 2020-01-20
    * @param {BaseDto} { id }
    * @param {UpdateArticleInput} data
-   * @returns {Promise<Category>}
+   * @returns {Promise<Article>}
    * @memberof ArticleResolver
    */
   @Mutation(() => Article, {
-    description: `Update ${Article.name}`,
+    description: `Modify ${Article.name} based on id`,
   })
   public async updateArticle(
     @Args() { id }: BaseDto,
     @Args('data') data: UpdateArticleInput,
-  ): Promise<Category> {
+  ): Promise<Article> {
     return await this.service.updateMany(id, data);
   }
 }

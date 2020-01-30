@@ -1,6 +1,6 @@
 import { ArgsType, Field, InputType } from 'type-graphql';
 import { IsNotEmpty, IsNumber, IsOptional, IsUUID, Max } from 'class-validator';
-import { Category } from '../../database/entity/category.entity';
+import { Category } from '@app/databases/entity/Category';
 
 @InputType({ description: 'Create a category input' })
 export class NewCategoryInput implements Partial<Category> {

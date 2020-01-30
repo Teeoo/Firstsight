@@ -1,11 +1,11 @@
 import { Resolver, Query, Args } from '@nestjs/graphql';
 import { AppService } from './app.service';
-import { Article } from './database/entity/article.entity';
+import { Article } from '@app/databases/entity/Article';
 import { ArticlePaginate } from './back/article/article.resolver';
-import { BaseDto } from './shared/base/base.dto';
-import { Category } from './database/entity/category.entity';
-import { Tags } from './database/entity/tags.entity';
-import { Links } from './database/entity/links.entity';
+import { BaseDto } from './shared';
+import { Category } from '@app/databases/entity/Category';
+import { Tags } from '@app/databases/entity/Tags';
+import { Links } from '@app/databases/entity/Links';
 
 @Resolver('App')
 export class AppResolver {

@@ -1,7 +1,6 @@
 import { Field, InputType } from 'type-graphql';
 import { IsNotEmpty, IsOptional } from 'class-validator';
-import { Tags } from '../../database/entity/tags.entity';
-
+import { Tags } from '@app/databases/entity/Tags';
 @InputType({ description: 'Create a tags input' })
 export class NewTagsInput implements Partial<Tags> {
   @Field({ description: '标签名' })

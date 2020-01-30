@@ -1,59 +1,49 @@
-import { BadRequestException, Injectable, Logger } from '@nestjs/common';
-import { InjectConfig } from 'nestjs-config';
+import {
+  Injectable,
+  Logger,
+  BadRequestException,
+  OnApplicationBootstrap,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { JwtService } from '@nestjs/jwt';
-import { User } from '../../database/entity/user.entity';
+import { User } from '@app/databases/entity/User';
 import { Repository } from 'typeorm';
-import { LoginUserInput, NewUserInput } from './auth.dto';
+import { JwtService } from '@nestjs/jwt';
 import { compareSync } from 'bcrypt';
+import { NewUserInput, LoginUserInput } from './auth.dto';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AuthService {
+  /**
+   * @description Logger
+   * @private
+   * @type {Logger}
+   * @memberof AuthService
+   */
   private logger: Logger;
 
   /**
    * Creates an instance of AuthService.
+   * @author lee
+   * @date 2020-01-18
    * @param {Repository<User>} repo
    * @param {JwtService} jwtService
-   * @param {*} config
+   * @param {ConfigService} conf
    * @memberof AuthService
    */
   constructor(
     @InjectRepository(User)
     private readonly repo: Repository<User>,
     private readonly jwtService: JwtService,
-    @InjectConfig() private readonly config: any,
+    private readonly conf: ConfigService,
   ) {
     this.logger = new Logger(AuthService.name);
   }
 
   /**
-   * @description
-   * @param {NewUserInput} data
-   * @param {string} ip
-   * @returns {Promise<User>}
-   * @memberof AuthService
-   */
-  public async SignUp(data: NewUserInput, ip: string): Promise<User> {
-    const result = await this.repo.findOne({
-      where: [
-        {
-          name: data.name,
-        },
-        {
-          email: data.email,
-        },
-      ],
-    });
-    if (result) {
-      throw new BadRequestException('用户名或者邮箱已经存在');
-    }
-    Object.assign(data, { lastIp: ip, lastTime: new Date() });
-    return this.repo.save(this.repo.create(data));
-  }
-
-  /**
-   * @description
+   * @description 登陆
+   * @author lee
+   * @date 2020-01-18
    * @param {LoginUserInput} data
    * @param {string} ip
    * @returns
@@ -84,23 +74,20 @@ export class AuthService {
         },
       ),
       tokenType: 'bearer',
-      expiresIn: this.config.get('auth.JWT_EXPIRESIN'),
+      expiresIn: this.conf.get('JWT_EXPIRESIN'),
       User: name,
     };
   }
 
   /**
-   * @description validate
+   * @description 验证用户信息
+   * @author lee
+   * @date 2020-01-18
    * @param {*} payload
    * @returns {Promise<User>}
    * @memberof AuthService
    */
   public async validateUser(payload: any): Promise<User> {
-    return await this.repo.findOne(
-      { name: payload.nick_name },
-      {
-        cache: 24 * 60 * 60,
-      },
-    );
+    return await this.repo.findOne({ name: payload.nick_name });
   }
 }

@@ -1,4 +1,36 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "src",
+  "projects": {
+    "databases": {
+      "type": "library",
+      "root": "libs/databases",
+      "entryFile": "index",
+      "sourceRoot": "libs/databases/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/databases/tsconfig.lib.json"
+      }
+    },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    },
+    "qcloudcos": {
+      "type": "library",
+      "root": "libs/qcloudcos",
+      "entryFile": "index",
+      "sourceRoot": "libs/qcloudcos/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/qcloudcos/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
 }

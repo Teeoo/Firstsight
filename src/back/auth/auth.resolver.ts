@@ -1,39 +1,33 @@
-import { Args, Context, Mutation, Resolver, Query } from '@nestjs/graphql';
+import { Resolver, Args, Context, Query } from '@nestjs/graphql';
 import { AuthService } from './auth.service';
-import { LoginUserInput, NewUserInput } from './auth.dto';
-import { User } from '../../database/entity/user.entity';
-import { Auth } from './auth.type';
+import { LoginUserInput } from './auth.dto';
+import { Auth } from './auth.types';
 
 @Resolver('Auth')
 export class AuthResolver {
   /**
    * Creates an instance of AuthResolver.
+   * @author lee
+   * @date 2020-01-18
    * @param {AuthService} authService
    * @memberof AuthResolver
    */
   constructor(private readonly authService: AuthService) {}
 
   /**
-   * @description
-   * @param {NewUserInput} data
-   * @param {*} ctx
-   * @returns
-   * @memberof AuthResolver
-   */
-  @Mutation(() => User, { description: 'SignUp' })
-  public async SignUp(@Args('data') data: NewUserInput, @Context() ctx: any) {
-    return await this.authService.SignUp(data, ctx.req.ip);
-  }
-
-  /**
-   * @description
+   * @description SignIn
+   * @author lee
+   * @date 2020-01-18
    * @param {LoginUserInput} data
    * @param {*} ctx
-   * @returns
+   * @returns {Promise<Auth>}
    * @memberof AuthResolver
    */
   @Query(() => Auth, { description: 'SignIn' })
-  public async SignIn(@Args('data') data: LoginUserInput, @Context() ctx: any) {
+  public async SignIn(
+    @Args('data') data: LoginUserInput,
+    @Context() ctx: any,
+  ): Promise<Auth> {
     return await this.authService.SignIn(data, ctx.req.ip);
   }
 }

@@ -1,6 +1,6 @@
-import { Fields } from './../../database/entity/fields.entity';
 import { Field, InputType } from 'type-graphql';
 import { IsNotEmpty } from 'class-validator';
+import { Fields } from '@app/databases/entity/Fields';
 
 @InputType({ description: 'Create a fields input' })
 export class NewFieldsInput implements Partial<Fields> {
