@@ -21,11 +21,21 @@
   },
   "dependencies": {
     "@nestjs/common": "^6.10.14",
+    "@nestjs/config": "^0.2.3",
     "@nestjs/core": "^6.10.14",
+    "@nestjs/jwt": "^6.1.1",
+    "@nestjs/passport": "^6.1.1",
     "@nestjs/platform-express": "^6.10.14",
+    "@nestjs/typeorm": "^6.3.1",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.11.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.18.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.4",
+    "typeorm": "^0.2.22"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.13.2",
