@@ -1,14 +1,38 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/backend/src",
+  "monorepo": true,
+  "root": "apps/backend",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/backend/tsconfig.app.json"
+  },
   "projects": {
-    "databases": {
-      "type": "library",
-      "root": "libs/databases",
-      "entryFile": "index",
-      "sourceRoot": "libs/databases/src",
+    "backend": {
+      "type": "application",
+      "root": "apps/backend",
+      "entryFile": "main",
+      "sourceRoot": "apps/backend/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/databases/tsconfig.lib.json"
+        "tsConfigPath": "apps/backend/tsconfig.app.json"
+      }
+    },
+    "frontend": {
+      "type": "application",
+      "root": "apps/frontend",
+      "entryFile": "main",
+      "sourceRoot": "apps/frontend/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/frontend/tsconfig.app.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
       }
     },
     "common": {
@@ -20,17 +44,23 @@
         "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     },
-    "qcloudcos": {
+    "common/database": {
       "type": "library",
-      "root": "libs/qcloudcos",
+      "root": "libs/common/database",
       "entryFile": "index",
-      "sourceRoot": "libs/qcloudcos/src",
+      "sourceRoot": "libs/common/database/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/qcloudcos/tsconfig.lib.json"
+        "tsConfigPath": "libs/common/database/tsconfig.lib.json"
+      }
+    },
+    "database": {
+      "type": "library",
+      "root": "libs/database",
+      "entryFile": "index",
+      "sourceRoot": "libs/database/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
       }
     }
-  },
-  "compilerOptions": {
-    "webpack": true
   }
 }

@@ -11,11 +11,11 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@app/databases": [
-        "libs/databases/src"
+      "@app/shared": [
+        "libs/shared/src"
       ],
-      "@app/databases/*": [
-        "libs/databases/src/*"
+      "@app/shared/*": [
+        "libs/shared/src/*"
       ],
       "@app/common": [
         "libs/common/src"
@@ -23,23 +23,17 @@
       "@app/common/*": [
         "libs/common/src/*"
       ],
-      "@app/shared": [
-        "src/shared"
+      "@app/common/database": [
+        "libs/common/database/src"
       ],
-      "@app/shared/*": [
-        "src/shared/*"
+      "@app/common/database/*": [
+        "libs/common/database/src/*"
       ],
-      "@app/core": [
-        "src/core"
+      "@app/database": [
+        "libs/database/src"
       ],
-      "@app/core/*": [
-        "src/core/*"
-      ],
-      "@app/qcloudcos": [
-        "libs/qcloudcos/src"
-      ],
-      "@app/qcloudcos/*": [
-        "libs/qcloudcos/src/*"
+      "@app/database/*": [
+        "libs/database/src/*"
       ]
     }
   },
