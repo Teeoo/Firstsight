@@ -84,7 +84,9 @@
       "@app/common/database/(.*)": "<rootDir>/libs/common/database/src/$1",
       "@app/common/database": "<rootDir>/libs/common/database/src",
       "@app/database/(.*)": "<rootDir>/libs/database/src/$1",
-      "@app/database": "<rootDir>/libs/database/src"
+      "@app/database": "<rootDir>/libs/database/src",
+      "@app/auth/(.*)": "<rootDir>/libs/auth/src/$1",
+      "@app/auth": "<rootDir>/libs/auth/src"
     }
   }
 }
