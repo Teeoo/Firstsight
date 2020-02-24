@@ -8,8 +8,12 @@ import { GraphQLModule } from '@nestjs/graphql'
 import { GraphQLError, GraphQLFormattedError } from 'graphql'
 import { Category } from '@app/category/category.entity'
 import { CategorySubscriber } from '@app/category/category.subscriber'
+import { Article } from '@app/article/article.entity'
+import { Tags } from '@app/tags/tags.entity'
+import { Fields } from '@app/fields/fields.entity'
+import { Links } from '@app/links/links.entity'
 
-const entities = [User, Category]
+const entities = [User, Category, Article, Tags, Fields, Links]
 
 const subscribers = [UserSubscriber, CategorySubscriber]
 

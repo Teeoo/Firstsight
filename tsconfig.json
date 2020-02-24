@@ -52,6 +52,30 @@
       ],
       "@app/category/*": [
         "libs/category/src/*"
+      ],
+      "@app/article": [
+        "libs/article/src"
+      ],
+      "@app/article/*": [
+        "libs/article/src/*"
+      ],
+      "@app/fields": [
+        "libs/fields/src"
+      ],
+      "@app/fields/*": [
+        "libs/fields/src/*"
+      ],
+      "@app/tags": [
+        "libs/tags/src"
+      ],
+      "@app/tags/*": [
+        "libs/tags/src/*"
+      ],
+      "@app/links": [
+        "libs/links/src"
+      ],
+      "@app/links/*": [
+        "libs/links/src/*"
       ]
     }
   },

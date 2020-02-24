@@ -13,11 +13,11 @@ import { CrudPaginate } from '@app/core/crud/crud.paginate'
 import { JwtAuth } from '@app/shared/guard/auth.guard'
 
 @ObjectType({ description: `${Category.name}  Paginate` })
-export class Paginate extends CrudPaginate(Category) {}
+export class CategoryPaginate extends CrudPaginate(Category) {}
 
 @UseGuards(new JwtAuth())
 @Resolver('Category')
-export class CategoryResolver extends CrudResolver(Category, Paginate) {
+export class CategoryResolver extends CrudResolver(Category, CategoryPaginate) {
   constructor(protected readonly service: CategoryService) {
     super(service)
   }

@@ -6,10 +6,12 @@ import {
   TreeChildren,
   TreeParent,
   Unique,
+  OneToMany,
 } from 'typeorm'
 import { Field, ObjectType } from 'type-graphql'
 import GraphQLJSON from 'graphql-type-json'
 import { App } from '@app/core/entities/app.entity'
+import { Article } from '@app/article/article.entity'
 
 @ObjectType({ implements: App, description: 'Category Type' })
 @Entity()
@@ -42,4 +44,10 @@ export class Category extends App {
   @TreeParent()
   @RelationId((category: Category) => category.parent)
   public parent: Category
+
+  @OneToMany(
+    () => Article,
+    article => article.category,
+  )
+  public article: Article[]
 }

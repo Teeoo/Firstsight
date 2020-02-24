@@ -101,7 +101,15 @@
       "@app/core/(.*)": "<rootDir>/libs/core/src/$1",
       "@app/core": "<rootDir>/libs/core/src",
       "@app/category/(.*)": "<rootDir>/libs/category/src/$1",
-      "@app/category": "<rootDir>/libs/category/src"
+      "@app/category": "<rootDir>/libs/category/src",
+      "@app/article/(.*)": "<rootDir>/libs/article/src/$1",
+      "@app/article": "<rootDir>/libs/article/src",
+      "@app/fields/(.*)": "<rootDir>/libs/fields/src/$1",
+      "@app/fields": "<rootDir>/libs/fields/src",
+      "@app/tags/(.*)": "<rootDir>/libs/tags/src/$1",
+      "@app/tags": "<rootDir>/libs/tags/src",
+      "@app/links/(.*)": "<rootDir>/libs/links/src/$1",
+      "@app/links": "<rootDir>/libs/links/src"
     }
   }
 }
