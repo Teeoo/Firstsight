@@ -13,7 +13,7 @@ export class AuthStrategy extends PassportStrategy(Strategy, 'jwt') {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKey: config.get('JWT_SECRET'),
-      ignoreExpiration: true,
+      ignoreExpiration: false,
     })
   }
 

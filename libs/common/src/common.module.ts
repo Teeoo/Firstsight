@@ -6,10 +6,12 @@ import { User } from '@app/auth/auth.entity'
 import { UserSubscriber } from '@app/auth/auth.subscriber'
 import { GraphQLModule } from '@nestjs/graphql'
 import { GraphQLError, GraphQLFormattedError } from 'graphql'
+import { Category } from '@app/category/category.entity'
+import { CategorySubscriber } from '@app/category/category.subscriber'
 
-const entities = [User]
+const entities = [User, Category]
 
-const subscribers = [UserSubscriber]
+const subscribers = [UserSubscriber, CategorySubscriber]
 
 @Module({
   imports: [

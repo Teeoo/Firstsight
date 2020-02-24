@@ -29,6 +29,7 @@
     "@nestjs/platform-express": "^6.11.8",
     "@nestjs/typeorm": "^6.3.3",
     "@types/bcrypt": "^3.0.0",
+    "@types/graphql-type-json": "^0.3.2",
     "apollo-server-express": "^2.10.1",
     "bcrypt": "^4.0.0",
     "class-transformer": "^0.2.3",
@@ -43,6 +44,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
+    "transliteration": "^2.1.8",
     "type-graphql": "^0.17.6",
     "typeorm": "^0.2.22"
   },
@@ -97,7 +99,9 @@
       "@app/auth/(.*)": "<rootDir>/libs/auth/src/$1",
       "@app/auth": "<rootDir>/libs/auth/src",
       "@app/core/(.*)": "<rootDir>/libs/core/src/$1",
-      "@app/core": "<rootDir>/libs/core/src"
+      "@app/core": "<rootDir>/libs/core/src",
+      "@app/category/(.*)": "<rootDir>/libs/category/src/$1",
+      "@app/category": "<rootDir>/libs/category/src"
     }
   }
 }

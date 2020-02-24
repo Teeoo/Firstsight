@@ -77,6 +77,6 @@ export class AuthService implements OnApplicationBootstrap {
    * @memberof AuthService
    */
   public async validateUser(payload: any): Promise<User> {
-    return await this.repo.findOne({ name: payload.nick_name })
+    return await this.repo.findOne({ email: payload.email })
   }
 }
